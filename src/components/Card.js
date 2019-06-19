@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import IconButton from '@material-ui/core/IconButton';
-import MoreVert from '@material-ui/icons/MoreVert';
+import Dialog from './Dialog'
 
 const Card = styled.div`
   width: 250px;                 
@@ -44,7 +43,6 @@ function CardComponent(props) {
   var authors = "N/A"
   var publisher = "N/A"
 
-
   // Reassigns bookcovers to be ones provided by Google
   if ( props.book.volumeInfo.imageLinks ) {
     bookCover = props.book.volumeInfo.imageLinks.thumbnail
@@ -64,19 +62,24 @@ function CardComponent(props) {
   }
 
   return(
-    <Card>
-      <CardHeader>
-        <BookCover src={ bookCover }/> <br />
-        { props.book.volumeInfo.title } 
-        <IconButton aria-label="More Information">
-            <MoreVert />
-        </IconButton>
-      </CardHeader>
-      <CardContent>      
-        By: { authors } <br />
-        Publisher: { publisher } 
-      </CardContent>
-    </Card>
+    <div>
+      <Card>
+        <CardHeader>
+          <BookCover src={ bookCover }/> <br />
+          { props.book.volumeInfo.title } 
+          <Dialog 
+            book = {props.book.volumeInfo}
+            bookCover = { bookCover }
+            authors = { authors }
+            publisher = { publisher }
+          />
+        </CardHeader>
+        <CardContent>      
+          By: { authors } <br />
+          Publisher: { publisher } 
+        </CardContent>
+      </Card>
+    </div>
   )
 }
 

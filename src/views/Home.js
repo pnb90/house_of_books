@@ -32,13 +32,9 @@ function Home() {
   return(
     <Container>
       <span>
-        <LocalLibrary
-          fontSize="500px"
-        />
+        <LocalLibrary />
         Haus of Books
-        <LocalLibrary
-          fontSize="500px"
-        />
+        <LocalLibrary />
       </span>
 
       <Searchbar 

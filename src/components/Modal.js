@@ -1,11 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import MoreVert from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
 
 // https://css-tricks.com/considerations-styling-modal/
-const Modal = styled.div`
-  display: none;
+const DialogBackground = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
@@ -14,9 +13,17 @@ const Modal = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
+
 `
 
-const ModalContent = styled.div`
+const Dialog = styled.dialog`
+  padding: 0;
+  border: 0;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 1em black;
+`
+const DialogContent = styled.div`
   background-color: #fefefe;
   margin: 15% auto; 
   padding: 20px;
@@ -24,63 +31,25 @@ const ModalContent = styled.div`
   width: 80%; 
 `
 
-
-function DisplayResults(props) {
-  const [open, setOpen] = React.useState(false);
-
-  var displayBooks = null
-
-  // Default values to cover edge cases where bookcovers or authors don't exist
-  var bookCover = "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg"
-  var authors = "N/A"
-
-  function handleClick() {
-    console.log("I WAS CLICKED!!")
-  }
-
-  if (props.books) {
-    displayBooks = props.books.map(book => {
-      
-      // Reassigns bookcovers to be ones provided by Google
-      if ( book.volumeInfo.imageLinks ) {
-        bookCover = book.volumeInfo.imageLinks.thumbnail
-      }
-      
-      // Reassigns authors to be ones provided by Google, and takes care of multiple authors
-      if ( book.volumeInfo.authors ) {
-        authors = book.volumeInfo.authors
-        
-        if (book.volumeInfo.authors.length > 1) {
-          authors = book.volumeInfo.authors.join(", ")
-        }
-      }
-
-      return(          
-        <Card 
-          onClick={ handleClick }
-        >
-          <CardHeader>
-            <BookCover src={ bookCover } alt='The book cover for `${bookCover}`'/> <br />
-            { book.volumeInfo.title } 
-            <IconButton aria-label="More Information">
-                <MoreVert />
-            </IconButton>
-          </CardHeader>
-          <CardContent>      
-            By: { authors } <br />
-            Publisher: {book.volumeInfo.publisher} 
-          </CardContent>
-        </Card>        
-    )})
-  } else {
-    displayBooks = "Why not search for a book?"
-  }
+function ModalComponent(props) {
+  const [open, setOpen] = useState(true)
 
   return(
-    <DisplayContainer>
-      { displayBooks }
-    </DisplayContainer>
+    <div>
+      <IconButton>  
+        <MoreVert />
+      </IconButton>
+      <DialogBackground>
+        <Dialog>
+          <h3>A native modal Dialog box</h3>
+          <div>
+            <p>Finally, HTML has a native Dialog box element! This is fantastic.</p>
+            <p>And a polyfill makes this usable today.</p>
+          </div>
+        </Dialog>
+      </DialogBackground>
+    </div>
   )
 }
 
-export default DisplayResults
+export default ModalComponent
