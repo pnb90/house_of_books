@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import MoreVert from '@material-ui/icons/MoreVert';
+import IconButton from '@material-ui/core/IconButton';
 
-function DialogComponent() {
+function DialogComponent(props) {
   
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   function handleClickOpen() {
     setOpen(true);
@@ -17,20 +19,39 @@ function DialogComponent() {
   }
 
   return(
-    <Dialog
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
+    <IconButton 
+      onClick = { handleClickOpen }
     >
-      <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
-      <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          Let Google help apps determine location. This means sending anonymous location data to
-          Google, even when no apps are running.
+      <MoreVert />
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <img src="props.bookCover" alt=""/>
+        <DialogTitle id="alert-dialog-title">{ props.book.title }</DialogTitle>
+        <DialogContent>
+        <DialogContentText>
+          By {props.authors}
         </DialogContentText>
-      </DialogContent>
-    </Dialog>
+         <DialogContentText>
+          {props.book.description}
+        </DialogContentText>
+        <DialogContentText>
+          Ratings: {props.book.ratingsCount} <br />
+          Average Rating: {props.book.averageRating} <br />
+          Categories: {props.book.categories} <br />
+          <a href={props.book.infoLink}  target="_blank">More Info</a> <br />
+          Language: {props.book.language} <br />
+          Page Count: {props.book.pageCount}
+        </DialogContentText>
+          <DialogContentText id="alert-dialog-description">
+          {console.log(props)}
+          </DialogContentText>
+        </DialogContent>
+      </Dialog>
+    </IconButton>
   )
 }
 
