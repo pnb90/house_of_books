@@ -3,8 +3,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import MoreVert from '@material-ui/icons/MoreVert';
-import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 
 function DialogComponent(props) {
   
@@ -17,41 +16,44 @@ function DialogComponent(props) {
   function handleClose() {
     setOpen(false);
   }
-
+  
   return(
-    <IconButton 
-      onClick = { handleClickOpen }
-    >
-      <MoreVert />
+    <div>
+      <Button 
+        onClick = { handleClickOpen }
+        color = "primary"
+      >
+        More Info
+      </Button>
+
       <Dialog
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <img src="props.bookCover" alt=""/>
-        <DialogTitle id="alert-dialog-title">{ props.book.title }</DialogTitle>
-        <DialogContent>
-        <DialogContentText>
+        <DialogTitle id="alert-dialog-title">
+          <img src={props.bookCover} alt=""/> <br />
+          { props.book.title } <br />
           By {props.authors}
-        </DialogContentText>
-         <DialogContentText>
-          {props.book.description}
-        </DialogContentText>
-        <DialogContentText>
-          Ratings: {props.book.ratingsCount} <br />
-          Average Rating: {props.book.averageRating} <br />
-          Categories: {props.book.categories} <br />
-          <a href={props.book.infoLink}  target="_blank">More Info</a> <br />
-          Language: {props.book.language} <br />
-          Page Count: {props.book.pageCount}
-        </DialogContentText>
-          <DialogContentText id="alert-dialog-description">
-          {console.log(props)}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {props.book.description}
+          </DialogContentText>
+          <DialogContentText>
+            Ratings: {props.book.ratingsCount} <br />
+            Average Rating: {props.book.averageRating} <br />
+            Categories: {props.book.categories} <br />
+            Language: {props.book.language} <br />
+            Page Count: {props.book.pageCount} <br />
+            <Button>
+              <a href={props.book.infoLink}  target="_blank" rel="noopener noreferrer" >Even More Info</a> <br />
+            </Button>
           </DialogContentText>
         </DialogContent>
       </Dialog>
-    </IconButton>
+    </div>
   )
 }
 

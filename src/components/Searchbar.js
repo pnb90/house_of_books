@@ -8,6 +8,7 @@ const Input = styled(InputBase)`
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 5px;
+  background: #f1f8e9;
 `
 function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
@@ -33,6 +34,7 @@ function Searchbar(props) {
         aria-label = "book searchbar"
         onChange = { handleSearchTermsChanges }
         onKeyPress = { handleKeyPress }
+        placeholder = "Search for books"
       />
     </div>
   )

@@ -17,6 +17,11 @@ const Container = styled.div`
   width: auto;
 `
 
+const SiteName = styled.div`
+  font-size: 46px;
+  margin: 5px;
+`
+
 function Home() {
   
   // Retrieving the search terms from the searcbar 
@@ -24,18 +29,18 @@ function Home() {
 
   const searchBookCallback = (dataFromChild) => {
     axios
-      .get(`https://www.googleapis.com/books/v1/volumes?q="${dataFromChild}"`)
+      .get(`https://www.googleapis.com/books/v1/volumes?q=${dataFromChild}&maxResults=40`)
       .then(response => setBooks(response.data.items))
       .catch(error => console.log(error))
   }
 
   return(
     <Container>
-      <span>
+      <SiteName>
         <LocalLibrary />
         Haus of Books
         <LocalLibrary />
-      </span>
+      </SiteName>
 
       <Searchbar 
         searchBookCallback = { searchBookCallback }
