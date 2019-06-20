@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Dialog from './Dialog'
 import Card from './Card'
 
 const DisplayContainer = styled.div`
@@ -13,6 +12,7 @@ const DisplayContainer = styled.div`
   justify-content: center;
   padding: 20px;
   overflow: auto;
+  background: #f1f8e9;
 `
 
 function DisplayResults(props) {
@@ -25,10 +25,8 @@ function DisplayResults(props) {
           book = { book }
         />      
       )})
-  } else {
-    displayBooks = "Why not search for a book?"
-  }
-
+  } 
+  
   return(
     <DisplayContainer>
       { displayBooks }
