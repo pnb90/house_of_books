@@ -86,7 +86,6 @@ function DialogComponent(props) {
             {props.book.description}
           </DialogContentText>
           <DialogContentText>
-            {console.log(props.extraInfo)}
             Ratings: {props.book.ratingsCount} <br />
             Average Rating: {props.book.averageRating} <br />
             Categories: {props.book.categories} <br />

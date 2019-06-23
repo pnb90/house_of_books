@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import InputBase from '@material-ui/core/InputBase'
-import SearchIcon from '@material-ui/icons/Search';
 
 const Input = styled(InputBase)`
   background: white;
@@ -29,7 +28,6 @@ function Searchbar(props) {
   }
 
   return(
-    <div>
       <Input
         type = "text"
         aria-label = "book searchbar"
@@ -37,7 +35,6 @@ function Searchbar(props) {
         onKeyPress = { handleKeyPress }
         placeholder = "Search for books"
       />
-    </div>
   )
 }
 export default Searchbar

@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# House of Books
 
-## Available Scripts
+House of Books is a simple app that allows a user to query the Google Books API. Results are displayed as small cards with overlays, with more information available upon click.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+What things you need to install the software and how to install them
 
-### `npm test`
+```
+Give examples
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing
 
-### `npm run build`
+A step by step series of examples that tell you how to get a development env running
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Say what the step will be
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+Give the example
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And repeat
 
-### `npm run eject`
+```
+until finished
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+End with an example of getting some data out of the system or using it for a little demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Running the tests
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Explain how to run the automated tests for this system
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Break down into end to end tests
 
-## Learn More
+Explain what these tests test and why
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+Give an example
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### And coding style tests
 
-### Code Splitting
+Explain what these tests test and why
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+Give an example
+```
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Add additional notes about how to deploy this on a live system
 
-### Making a Progressive Web App
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* [React ](https://reactjs.org/) - Frontend Framework
+* [Material UI](https://material-ui.com/) - React Framework based on Material Design
+* [Enzyme](https://github.com/airbnb/enzyme) - Javascript testing utilities
+* [Jest](https://jestjs.io/) - testing framework
+* [Axios](https://github.com/axios/axios) - used to make the Google Books API call
+* [Styled-Components](https://www.styled-components.com/) - CSS styling for the entire app.
 
-### Advanced Configuration
+## Versioning
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-### Deployment
+## Authors
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+* **Phuoc Bui** - *Initial work* - [pnb90](https://github.com/pnb90)
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+Thank you to all the insane amount of internet resources I utilized! W3 Schools and CSS Tricks 

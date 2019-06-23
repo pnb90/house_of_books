@@ -26,11 +26,15 @@ function Home() {
   
   // Retrieving the search terms from the searcbar 
   const [books, setBooks] = useState()
+  const [totalItems, setTotalItems] = useState()
 
   const searchBookCallback = (dataFromChild) => {
     axios
       .get(`https://www.googleapis.com/books/v1/volumes?q=${dataFromChild}&maxResults=40`)
-      .then(response => setBooks(response.data.items))
+      .then(response => {
+                          setTotalItems(response.data.totalItems)
+                          setBooks(response.data.items)
+                          })
       .catch(error => console.log(error))
   }
 
@@ -38,7 +42,7 @@ function Home() {
     <Container>
       <SiteName>
         <LocalLibrary />
-        House of Books
+          House of Books
         <LocalLibrary />
       </SiteName>
 
@@ -48,6 +52,7 @@ function Home() {
 
       <DisplayResults 
         books = { books }
+        totalItems = { totalItems }
       />
 
     </Container>

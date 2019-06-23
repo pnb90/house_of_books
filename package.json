@@ -13,7 +13,7 @@
     "styled-components": "^4.3.1",
     "typescript": "^3.5.1"
   },
-    "engines": {
+  "engines": {
     "npm": "6.4.1",
     "node": "10.15.3"
   },
@@ -37,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0"
   }
 }
