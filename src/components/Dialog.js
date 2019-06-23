@@ -42,20 +42,24 @@ function DialogComponent(props) {
   `
 
   const StyledButton = styled.button`
-    background-color: #4CAF50;
+    background-color: #aed581;
     border: none;
-    color: white;
+    color: #f1f8e9;
     padding: 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    margin: 10px;
+    
+    &:hover{
+      cursor: pointer;
+    } 
   `
 
   return(
     <div>
       <StyledButton 
         onClick = { handleClickOpen }
-        color = "primary"
       >
         More Info
       </StyledButton>
@@ -82,6 +86,7 @@ function DialogComponent(props) {
             {props.book.description}
           </DialogContentText>
           <DialogContentText>
+            {console.log(props.extraInfo)}
             Ratings: {props.book.ratingsCount} <br />
             Average Rating: {props.book.averageRating} <br />
             Categories: {props.book.categories} <br />

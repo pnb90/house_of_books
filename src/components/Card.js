@@ -29,10 +29,6 @@ const BookCover = styled.img`
   padding: 5px;    
 `
 
-const Container = styled.div`
-  position: relative;
-`
-
 const AltBookCover = styled.img`
   width: 100%;
   height: 100%;
@@ -43,17 +39,21 @@ const Overlay = styled.div`
   position: absolute;
   width: 225px;
   height: 300px;
-  display: flex
-  flex-wrap: auto;
-  flex-direction: column
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  overflow: auto;
   align-items: center;
   opacity: 0;
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+
 
   &:hover{
     transition: .25s ease;
     opacity: 1;
-    background: rgba(0,0,0,0.7);
+    background: rgba(51,105,30,0.8);
     color: white;
     font-size: 20px;
   }
@@ -87,11 +87,12 @@ function CardComponent(props) {
   return(
       <Card>
         <Overlay>
-          <h4> { props.book.volumeInfo.title } </h4>
+          <h3> { props.book.volumeInfo.title } </h3>
           By: { authors } <br />
           Publisher: { publisher } <br />
           <Dialog 
-            book = {props.book.volumeInfo}
+            book = { props.book.volumeInfo }
+            extraInfo = { props.book }
             bookCover = { bookCover }
             authors = { authors }
             publisher = { publisher }

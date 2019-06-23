@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import Card from './Card'
 import Slide from '@material-ui/core/Slide';
 
-
-
 const DisplayContainer = styled.div`
   display: flex;
   width: 85%; 
