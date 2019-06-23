@@ -3,27 +3,18 @@ import styled from 'styled-components'
 import Dialog from './Dialog'
 
 const Card = styled.div`
-  width: 300px; 
-  height: 400px;                
-  border: 1px solid black;    
-  border-radius: 5px;           
-  overflow: auto;             
-  flex-direction: column;
+  width: 225px; 
+  height: 300px;                
   margin: 12px;
-  padding: 10px;
+  padding: 5px;
+  position: relative;
 
-  &:hover{
-    transform: scale(1.07 , 1.07);
-    box-shadow: 5px 5px 10px #c5e1a5;
-  }
 `
 const CardHeader = styled.div`
   text-align: center;
   border-bottom: 1px solid black;
   padding: 5px;
 `
-
-
 
 const CardContent = styled.div`
   flex-direction: column;   
@@ -33,11 +24,40 @@ const CardContent = styled.div`
 `
 
 const BookCover = styled.img`
-  height: 175px;
+  height: 200px;
   width: 150px;
   border: 1px solid grey;
   padding: 5px;    
 `
+
+const Container = styled.div`
+  position: relative;
+`
+
+const AltBookCover = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  width: 225px;
+  height: 300px;
+  flex-wrap: auto;
+  opacity: 0;
+
+  &:hover{
+    transition: .25s ease;
+    opacity: 1;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+    align-items: center;
+  }
+`
+
 
 
 function CardComponent(props) { 
@@ -66,27 +86,42 @@ function CardComponent(props) {
   }
 
   return(
-    <div>
       <Card>
-        <CardHeader>
-          <BookCover src={ bookCover }/> <br />
-          <h2>
-            { props.book.volumeInfo.title } 
-          </h2>
-        </CardHeader>
-        <CardContent>      
-          By: { authors } <br />
-          Publisher: { publisher } 
-        </CardContent>
-        <Dialog 
-          book = {props.book.volumeInfo}
-          bookCover = { bookCover }
-          authors = { authors }
-          publisher = { publisher }
-        />
+        <Overlay>
+            { props.book.volumeInfo.title } <br />
+            By: { authors } <br />
+            Publisher: { publisher }  
+        </Overlay>
+        <AltBookCover src={ bookCover } alt="book cover"/>
       </Card>
-    </div>
   )
 }
 
 export default CardComponent
+
+// <Card>
+//   <CardHeader>
+//     <BookCover src={ bookCover } alt="book cover"/> <br />
+//     <h2>
+//       { props.book.volumeInfo.title } 
+//     </h2>
+//   </CardHeader>
+//   <CardContent>      
+//     By: { authors } <br />
+//     Publisher: { publisher } 
+//   </CardContent>
+//   <Dialog 
+//     book = {props.book.volumeInfo}
+//     bookCover = { bookCover }
+//     authors = { authors }
+//     publisher = { publisher }
+//   />
+// </Card>
+
+  // position: fixed;
+  // border-radius: 5px;
+  // padding: 10px;   
+  // height: 100%
+  // width: 100%;
+  // max-width: 225px; 
+  // max-height: 300px;
