@@ -38,7 +38,7 @@ function Home() {
     <Container>
       <SiteName>
         <LocalLibrary />
-        Haus of Books
+        House of Books
         <LocalLibrary />
       </SiteName>
 
