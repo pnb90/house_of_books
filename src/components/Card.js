@@ -9,27 +9,8 @@ const Card = styled.div`
   padding: 5px;
   position: relative;
 `
-const CardHeader = styled.div`
-  text-align: center;
-  border-bottom: 1px solid black;
-  padding: 5px;
-`
-
-const CardContent = styled.div`
-  flex-direction: column;   
-  justify-content: center;  
-  align-items: center;      
-  padding: 15px;   
-`
 
 const BookCover = styled.img`
-  height: 200px;
-  width: 150px;
-  border: 1px solid grey;
-  padding: 5px;    
-`
-
-const AltBookCover = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 5px;
@@ -98,31 +79,9 @@ function CardComponent(props) {
             publisher = { publisher }
           />
         </Overlay>
-        <AltBookCover src={ bookCover } alt="book cover"/>
+        <BookCover src={ bookCover } alt="book cover"/>
       </Card>
   )
 }
 
 export default CardComponent
-
-// <Card>
-//   <CardHeader>
-//     <BookCover src={ bookCover } alt="book cover"/> <br />
-//     <h2>
-//       { props.book.volumeInfo.title } 
-//     </h2>
-//   </CardHeader>
-//   <CardContent>      
-//     By: { authors } <br />
-//     Publisher: { publisher } 
-//   </CardContent>
-
-// </Card>
-
-  // position: fixed;
-  // border-radius: 5px;
-  // padding: 10px;   
-  // height: 100%
-  // width: 100%;
-  // max-width: 225px; 
-  // max-height: 300px;

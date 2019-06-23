@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Card from './Card'
-import Slide from '@material-ui/core/Slide';
 
 const DisplayContainer = styled.div`
   display: flex;
@@ -22,13 +21,12 @@ function DisplayResults(props) {
   if (props.books) {
     displayBooks = props.books.map(book => {
       return(
-        <Slide>
-          <Card 
-            book = { book }
-          />      
-        </Slide>
+              <Card
+                key = { book.id } 
+                book = { book }
+              />      
       )})
-  } else if (props === undefined ) {
+  } else if (props.totalItems === 0 ){
     displayBooks = "Oh no - 0 search results. Try another search"
   }
   
