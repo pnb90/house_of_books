@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import InputBase from '@material-ui/core/InputBase'
 import SearchIcon from '@material-ui/icons/Search';
 
-
 const Input = styled(InputBase)`
   background: white;
   border-radius: 5px;
@@ -31,7 +30,6 @@ function Searchbar(props) {
 
   return(
     <div>
-      
       <Input
         type = "text"
         aria-label = "book searchbar"

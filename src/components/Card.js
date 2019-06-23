@@ -8,7 +8,6 @@ const Card = styled.div`
   margin: 12px;
   padding: 5px;
   position: relative;
-
 `
 const CardHeader = styled.div`
   text-align: center;
@@ -44,21 +43,21 @@ const Overlay = styled.div`
   position: absolute;
   width: 225px;
   height: 300px;
+  display: flex
   flex-wrap: auto;
+  flex-direction: column
+  justify-content: center;
+  align-items: center;
   opacity: 0;
 
   &:hover{
     transition: .25s ease;
     opacity: 1;
     background: rgba(0,0,0,0.7);
-    padding: 10px;
     color: white;
-    font-size: 24px;
-    align-items: center;
+    font-size: 20px;
   }
 `
-
-
 
 function CardComponent(props) { 
 
@@ -88,9 +87,15 @@ function CardComponent(props) {
   return(
       <Card>
         <Overlay>
-            { props.book.volumeInfo.title } <br />
-            By: { authors } <br />
-            Publisher: { publisher }  
+          <h4> { props.book.volumeInfo.title } </h4>
+          By: { authors } <br />
+          Publisher: { publisher } <br />
+          <Dialog 
+            book = {props.book.volumeInfo}
+            bookCover = { bookCover }
+            authors = { authors }
+            publisher = { publisher }
+          />
         </Overlay>
         <AltBookCover src={ bookCover } alt="book cover"/>
       </Card>
@@ -110,12 +115,7 @@ export default CardComponent
 //     By: { authors } <br />
 //     Publisher: { publisher } 
 //   </CardContent>
-//   <Dialog 
-//     book = {props.book.volumeInfo}
-//     bookCover = { bookCover }
-//     authors = { authors }
-//     publisher = { publisher }
-//   />
+
 // </Card>
 
   // position: fixed;

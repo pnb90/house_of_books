@@ -3,9 +3,7 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import Button from '@material-ui/core/Button'
 import styled from 'styled-components'
-
 
 function DialogComponent(props) {
   
@@ -42,14 +40,25 @@ function DialogComponent(props) {
     padding-left: 10px;
     font-size: 32px;
   `
+
+  const StyledButton = styled.button`
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  `
+
   return(
     <div>
-      <Button 
+      <StyledButton 
         onClick = { handleClickOpen }
         color = "primary"
       >
         More Info
-      </Button>
+      </StyledButton>
 
       <Dialog
         open={open}
@@ -78,9 +87,9 @@ function DialogComponent(props) {
             Categories: {props.book.categories} <br />
             Language: {props.book.language} <br />
             Page Count: {props.book.pageCount} <br />
-            <Button>
+            <button>
               <a href={props.book.infoLink}  target="_blank" rel="noopener noreferrer" >Even More Info</a> <br />
-            </Button>
+            </button>
           </DialogContentText>
         </DialogContent>
       </Dialog>
