@@ -1,22 +1,47 @@
 import React, {useState} from 'react'
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import Button from '@material-ui/core/Button'
+import styled from 'styled-components'
+
 
 function DialogComponent(props) {
   
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   function handleClickOpen() {
-    setOpen(true);
+    setOpen(true)
   }
 
   function handleClose() {
-    setOpen(false);
+    setOpen(false)
   }
+
+  const BookCover = styled.img`
+    height: 266px;
+    width: 200px;
+    border: 1px solid grey;
+    padding: 5px;    
+  `
+
+  const Row = styled.div`
+    display: flex;
+    align-items: center;
+  `
+
+  const CoverColumn = styled.div`
+    flex: 25%;
+  `
   
+  const TitleColumn = styled.div`
+    flex: 75%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 10px;
+    font-size: 32px;
+  `
   return(
     <div>
       <Button 
@@ -33,9 +58,15 @@ function DialogComponent(props) {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          <img src={props.bookCover} alt=""/> <br />
-          { props.book.title } <br />
-          By {props.authors}
+          <Row>
+            <CoverColumn>
+              <BookCover src={props.bookCover} alt="bookcover"/>
+            </CoverColumn>
+            <TitleColumn>
+              { props.book.title } <br />
+              By {props.authors}
+            </TitleColumn>
+          </Row>
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
