@@ -4,7 +4,11 @@ House of Books is a simple app that allows a user to query the Google Books API.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Once forked, cd into folder and run 
+
+```
+npm install
+```
 
 ### Prerequisites
 
@@ -32,29 +36,22 @@ until finished
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
+## Usage
+Users are presented with a blank page ready to be filled with books.
 
-Explain how to run the automated tests for this system
+Once ready, users can type in a book title, author, or any search term to look for books:
+  <img src="http://www.giphy.com/gifs/jtEe0Hv2FvyjmObYrz" alt="a gif showing book search">
 
-### Break down into end to end tests
+Results will display their bookcovers in the box below, which users can then scroll over to find out more information, including title, author, and publisher.
 
-Explain what these tests test and why
+If no results exist, then users will be notified. Additionally, if there are no provided authors or publishers, "N/A" will replace the requisite text.
 
-```
-Give an example
-```
 
-### And coding style tests
+## Testing
 
-Explain what these tests test and why
+Tests were created with Jest and Enzyme. 
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+That being said, testing is currently incomplete. As a newer user of React, my goal was to first and foremost complete the project. Any excess time leftover would then be dedicated to testing, which would be a large undertaking in itself, as I would have to learn how to develop tests using new React specific tools.  
 
 ## Built With
 
@@ -64,19 +61,14 @@ Add additional notes about how to deploy this on a live system
 * [Jest](https://jestjs.io/) - testing framework
 * [Axios](https://github.com/axios/axios) - used to make the Google Books API call
 * [Styled-Components](https://www.styled-components.com/) - CSS styling for the entire app.
+* [Jest](https://jestjs.io/) - Javascript Testing Framework
+* [Enzyme](https://airbnb.io/enzyme/) - JavaScript Testing utility for React
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
 * **Phuoc Bui** - [pnb90](https://github.com/pnb90)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
-Thank you to all the insane amount of internet resources I utilized! W3 Schools and CSS Tricks 
+Thank you to all the insane amount of internet resources I utilized!
