@@ -27,20 +27,24 @@ This command will start the app on localhost:3000/, where it is ready to use! En
 Users are presented with a blank page ready to be filled with books.
 
 Once ready, users can type in a book's title, author, or any search term to look for books.
+  <img src="https://media.giphy.com/media/YSeTvY26YBwBY53Xlp/giphy.gif" alt="Gif House of Book's search feature]">
   ![Gif House of Book's search feature]
   (https://media.giphy.com/media/YSeTvY26YBwBY53Xlp/giphy.gif)
 
 Results will display their book covers in the box below. Users can then scroll over each book cover to find out more information, including title, author, and publisher.
 
 Clicking on the "More Info" button on the overlay will allow a user to see a description of the book as well as an external link to Google Books.
+  <img src="https://media.giphy.com/media/dvyIpITSA6iIDG1B8v/giphy.gif" alt="Gif House of Book's results, overlay, and modal">
   ![Gif House of Book's results, overlay, and modal]
   (https://media.giphy.com/media/dvyIpITSA6iIDG1B8v/giphy.gif)
   
 If no results exist, then users will be notified. 
+  <img src="./assets/images/NoResults.png" alt="Image of no results">
   ![Image of no results]
   (./assets/images/NoResults.png)
   
 Additionally, if there are no provided authors or publishers, "N/A" will replace the missing information.
+  <img src="./assets/images/MissingPublisher.png" alt="Image of no results">
   ![Image of no results]
   (./assets/images/MissingPublisher.png)
 
