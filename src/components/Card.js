@@ -56,8 +56,7 @@ function CardComponent(props) {
     publisher = props.book.volumeInfo.publisher 
   }
   
-  if ( props.book.volumeInfo.description && "") {
-    console.log("I GOT REASSIGNED")
+  if (( props.book.volumeInfo.description ) && ( props.book.volumeInfo.description != "" )) {
     description = props.book.volumeInfo.description
   }
 

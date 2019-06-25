@@ -18,7 +18,7 @@ function Searchbar(props) {
   }
   
   const  handleSubmit = () => {
-    props.searchBookCallback( searchTerm )
+    props.searchBookCallback( searchTerm.toLowerCase() )
   }
 
   const handleKeyPress = (event) => {
