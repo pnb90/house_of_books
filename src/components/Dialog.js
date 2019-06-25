@@ -56,6 +56,16 @@ function DialogComponent(props) {
     } 
   `
 
+  const StyledA = styled.a`
+    background-color: #aed581;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover{
+      cursor: pointer;
+    } 
+  `
   return(
     <div>
       <StyledButton 
@@ -83,17 +93,11 @@ function DialogComponent(props) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            {props.book.description}
+            Description: <br />
+            {props.description}
           </DialogContentText>
           <DialogContentText>
-            Ratings: {props.book.ratingsCount} <br />
-            Average Rating: {props.book.averageRating} <br />
-            Categories: {props.book.categories} <br />
-            Language: {props.book.language} <br />
-            Page Count: {props.book.pageCount} <br />
-            <button>
-              <a href={props.book.infoLink}  target="_blank" rel="noopener noreferrer" >Even More Info</a> <br />
-            </button>
+            <StyledA href={props.book.infoLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA>
           </DialogContentText>
         </DialogContent>
       </Dialog>

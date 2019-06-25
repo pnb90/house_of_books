@@ -46,8 +46,8 @@ function CardComponent(props) {
   let bookCover = "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg"
   let authors = "N/A"
   let publisher = "N/A"
-
-  // Reassigns bookcovers to be ones provided by Google
+  let description = "N/A"
+  
   if ( props.book.volumeInfo.imageLinks ) {
     bookCover = props.book.volumeInfo.imageLinks.thumbnail
   }
@@ -56,7 +56,11 @@ function CardComponent(props) {
     publisher = props.book.volumeInfo.publisher 
   }
   
-  // Reassigns authors to be ones provided by Google, and takes care of multiple authors
+  if ( props.book.volumeInfo.description && "") {
+    console.log("I GOT REASSIGNED")
+    description = props.book.volumeInfo.description
+  }
+
   if ( props.book.volumeInfo.authors ) {
     authors = props.book.volumeInfo.authors
     
@@ -64,6 +68,8 @@ function CardComponent(props) {
       authors = props.book.volumeInfo.authors.join(", ")
     }
   }
+
+
 
   return(
       <Card>
@@ -77,6 +83,7 @@ function CardComponent(props) {
             bookCover = { bookCover }
             authors = { authors }
             publisher = { publisher }
+            description = { description }
           />
         </Overlay>
         <BookCover src={ bookCover } alt="book cover"/>

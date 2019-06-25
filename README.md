@@ -71,7 +71,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Phuoc Bui** - *Initial work* - [pnb90](https://github.com/pnb90)
+* **Phuoc Bui** - [pnb90](https://github.com/pnb90)
 
 ## License
 
