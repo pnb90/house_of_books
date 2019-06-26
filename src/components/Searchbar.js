@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
 import InputBase from '@material-ui/core/InputBase'
+import PropTypes from 'prop-types'
 
 const Input = styled(InputBase)`
   background: white;
@@ -37,4 +38,9 @@ function Searchbar(props) {
       />
   )
 }
+
+Searchbar.propTypes = {
+  searchBookCallback: PropTypes.func
+}
+
 export default Searchbar
