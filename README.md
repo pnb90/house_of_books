@@ -55,7 +55,7 @@ npm test
 
 That being said, testing is currently incomplete. See more information in the Challenges section.
 
-##Goals
+## Goals
   - Accomplish all tasks given
   - Try to tackle CSS from scratch, if possible.
   - Include animations and design
@@ -64,7 +64,7 @@ I believe I was able to complete my understanding of the challenge, which was re
 
 I was able to mostly accomplish CSS from scratch with the help of [Styled-Components](https://www.styled-components.com/) and a fair amount of tutorials, with exception of the Dialog component. My thought was it was better to move forward with something that did work, that I can improve later, than present something that did not function.
 
-##Challenges
+## Challenges
   - Integrating several new elements based on an elementary understanding of React.
   - Styling
   - Website Design/Animations
@@ -79,7 +79,7 @@ Testing was near the forefront of my mind when planning the project as I knew th
 
 While it would have been ideal to implement testing from the beginning to follow TDD standards, but given the project and level of experience, I did not want to submit an incomplete project. An attempt was made. 
 
-##Icebox
+## Icebox
   - Testing
   - Smoother and better animations
   - Vetted for accessibility
