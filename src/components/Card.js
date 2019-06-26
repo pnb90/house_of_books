@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Dialog from './Dialog'
+import PropTypes from 'prop-types'
 
 const Card = styled.div`
   width: 225px; 
@@ -88,6 +89,11 @@ function CardComponent(props) {
         <BookCover src={ bookCover } alt="book cover"/>
       </Card>
   )
+}
+
+Card.propTypes = {
+  key: PropTypes.number,
+  book: PropTypes.object
 }
 
 export default CardComponent

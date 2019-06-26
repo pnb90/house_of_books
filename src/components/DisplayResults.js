@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import Card from './Card'
+import PropTypes from 'prop-types'
 
 const DisplayContainer = styled.div`
   display: flex;
   width: 85%; 
   height: 500px;
+  max-height: 100%;
   background: white;
   border-radius: 5px;
   flex-wrap: wrap;
@@ -36,5 +38,11 @@ function DisplayResults(props) {
     </DisplayContainer>
   )
 }
+
+DisplayContainer.propTypes = {
+  books: PropTypes.array,
+  totalItems: PropTypes.number
+}
+
 
 export default DisplayResults

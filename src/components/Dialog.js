@@ -4,6 +4,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 function DialogComponent(props) {
   
@@ -86,8 +87,8 @@ function DialogComponent(props) {
               <BookCover src={props.bookCover} alt="bookcover"/>
             </CoverColumn>
             <TitleColumn>
-              { props.book.title } <br />
-              By {props.authors}
+              <ul> { props.book.title } </ul>
+              <ul> By {props.authors} </ul>
             </TitleColumn>
           </Row>
         </DialogTitle>
@@ -103,6 +104,18 @@ function DialogComponent(props) {
       </Dialog>
     </div>
   )
+}
+
+DialogComponent.propTypes = {
+  book: PropTypes.object,
+  extraInfo: PropTypes.object,
+  bookCover: PropTypes.string,
+  authors: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+    ]),
+  publisher: PropTypes.string
+  
 }
 
 export default DialogComponent
