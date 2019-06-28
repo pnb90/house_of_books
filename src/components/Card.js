@@ -10,7 +10,6 @@ const Card = styled.div`
   padding: 5px;
   position: relative;
 `
-
 const BookCover = styled.img`
   width: 100%;
   height: 100%;
@@ -31,7 +30,6 @@ const Overlay = styled.div`
   padding: 20px;
   box-sizing: border-box;
 
-
   &:hover{
     transition: .25s ease;
     opacity: 1;
@@ -42,58 +40,37 @@ const Overlay = styled.div`
 `
 
 function CardComponent(props) { 
-
-  // Default values to cover edge cases where bookcovers or authors don't exist
-  let bookCover = "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg"
-  let authors = "N/A"
-  let publisher = "N/A"
-  let description = "N/A"
-  
-  if ( props.book.volumeInfo.imageLinks ) {
-    bookCover = props.book.volumeInfo.imageLinks.thumbnail
-  }
-
-  if ( props.book.volumeInfo.publisher ) {
-    publisher = props.book.volumeInfo.publisher 
-  }
-  
-  if (( props.book.volumeInfo.description ) && ( props.book.volumeInfo.description !== "" )) {
-    description = props.book.volumeInfo.description
-  }
-
-  if ( props.book.volumeInfo.authors ) {
-    authors = props.book.volumeInfo.authors
-    
-    if (props.book.volumeInfo.authors.length > 1) {
-      authors = props.book.volumeInfo.authors.join(", ")
-    }
-  }
-
-
-
   return(
       <Card>
         <Overlay>
-          <h3> { props.book.volumeInfo.title } </h3>
-          By: { authors } <br />
-          Publisher: { publisher } <br />
+          <h3> { props.title } </h3>
+          <ul> By: { props.authors } </ul>
+          <ul> Publisher: { props.publisher } </ul>
           <Dialog 
             book = { props.book.volumeInfo }
             extraInfo = { props.book }
-            bookCover = { bookCover }
-            authors = { authors }
-            publisher = { publisher }
-            description = { description }
+            bookCover = { props.bookCover }
+            authors = { props.authors }
+            publisher = { props.publisher }
+            description = { props.description }
           />
         </Overlay>
-        <BookCover src={ bookCover } alt="book cover"/>
+        <BookCover src={ props.bookCover } alt = {props.title + "'s book cover"}/>
       </Card>
   )
 }
 
 Card.propTypes = {
-  key: PropTypes.number,
-  book: PropTypes.object
+  key: PropTypes.string,
+  book: PropTypes.object,
+  title: PropTypes.string,
+  bookCover: PropTypes.string,
+  publisher: PropTypes.string,
+  description: PropTypes.string,
+  authors: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+    ])
 }
 
 export default CardComponent

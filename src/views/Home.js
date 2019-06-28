@@ -5,7 +5,6 @@ import DisplayResults from '../components/DisplayResults'
 import LocalLibrary from '@material-ui/icons/LocalLibrary'
 import axios from 'axios'
 
-
 // https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 const Container = styled.div`
   display: flex;

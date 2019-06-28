@@ -5,14 +5,13 @@ import PropTypes from 'prop-types'
 
 const DisplayContainer = styled.div`
   display: flex;
-  width: 85%; 
-  height: 500px;
-  max-height: 100%;
+  width: calc(100vw - 15rem); 
+  height: calc(100vh - 12rem);
   background: white;
   border-radius: 5px;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
+  padding: 1rem;
   overflow: auto;
   background: #f1f8e9;
 `
@@ -22,10 +21,16 @@ function DisplayResults(props) {
 
   if (props.books) {
     displayBooks = props.books.map(book => {
+
       return(
               <Card
                 key = { book.id } 
                 book = { book }
+                title = { book.volumeInfo.title }
+                bookCover = { (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail) || "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg" }
+                publisher = { book.volumeInfo.publisher || "N/A" }
+                description = { book.volumeInfo.description || "N/A" }
+                authors = { book.volumeInfo.authors || "N/A" }
               />      
       )})
   } else if (props.totalItems === 0 ){
