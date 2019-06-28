@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Searchbar Component renders the searchbar component without errors 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <Styled(WithStyles(ForwardRef(InputBase)))
+    aria-label="book searchbar"
+    onChange={[Function]}
+    placeholder="Search for books"
+    type="text"
+  />
+</form>
+`;

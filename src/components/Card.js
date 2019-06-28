@@ -10,7 +10,6 @@ const Card = styled.div`
   padding: 5px;
   position: relative;
 `
-
 const BookCover = styled.img`
   width: 100%;
   height: 100%;
@@ -30,7 +29,6 @@ const Overlay = styled.div`
   border-radius: 5px;
   padding: 20px;
   box-sizing: border-box;
-
 
   &:hover{
     transition: .25s ease;
@@ -63,7 +61,7 @@ function CardComponent(props) {
 }
 
 Card.propTypes = {
-  key: PropTypes.number,
+  key: PropTypes.string,
   book: PropTypes.object,
   title: PropTypes.string,
   bookCover: PropTypes.string,
@@ -73,12 +71,6 @@ Card.propTypes = {
     PropTypes.string,
     PropTypes.array
     ])
-}
-
-Card.defaultProps = {
-  authors: "N/A",
-  publisher: "N/A",
-  description: "N/A"
 }
 
 export default CardComponent

@@ -13,29 +13,28 @@ const Input = styled(InputBase)`
 `
 function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
+
   
   const handleSearchTermsChanges = (event) => { 
     setSearchTerm(event.target.value); 
   }
-  
-  const  handleSubmit = () => {
+    
+  const handleSubmit = (event) => {
+    event.preventDefault()
     props.searchBookCallback( searchTerm.toLowerCase() )
   }
 
-  const handleKeyPress = (event) => {
-    if(event.key === "Enter") {
-      handleSubmit()
-    }
-  }
-
   return(
+    <form
+      onSubmit = { handleSubmit }
+    >
       <Input
         type = "text"
         aria-label = "book searchbar"
         onChange = { handleSearchTermsChanges }
-        onKeyPress = { handleKeyPress }
         placeholder = "Search for books"
       />
+    </form>
   )
 }
 

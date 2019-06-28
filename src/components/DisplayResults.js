@@ -21,18 +21,16 @@ function DisplayResults(props) {
 
   if (props.books) {
     displayBooks = props.books.map(book => {
-      
-      var bookCover = book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg"
 
       return(
               <Card
                 key = { book.id } 
                 book = { book }
                 title = { book.volumeInfo.title }
-                bookCover = { bookCover }
-                publisher = { book.volumeInfo.publisher  }
-                description = { book.volumeInfo.description }
-                authors = { book.volumeInfo.authors  }
+                bookCover = { (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail) || "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg" }
+                publisher = { book.volumeInfo.publisher || "N/A" }
+                description = { book.volumeInfo.description || "N/A" }
+                authors = { book.volumeInfo.authors || "N/A" }
               />      
       )})
   } else if (props.totalItems === 0 ){
