@@ -4,8 +4,8 @@ import { create } from "react-test-renderer";
 import Searchbar from '../components/Searchbar';
 
 describe('Basic test', () => {
-  it('basic test description', () => {
-    expect(2+2).toEqual(4)
+  it('basic test', () => {
+    expect(2+2).toBe(4)
   })
 })
 
@@ -37,4 +37,3 @@ describe('Searchbar Props', () => {
     )
   })
 })
-

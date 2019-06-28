@@ -48,7 +48,6 @@ function CardComponent(props) {
           <h3> { props.title } </h3>
           <ul> By: { props.authors } </ul>
           <ul> Publisher: { props.publisher } </ul>
-          {console.log(props.publisher)}
           <Dialog 
             book = { props.book.volumeInfo }
             extraInfo = { props.book }
@@ -58,7 +57,7 @@ function CardComponent(props) {
             description = { props.description }
           />
         </Overlay>
-        <BookCover src={ props.bookCover } alt="book cover"/>
+        <BookCover src={ props.bookCover } alt = {props.title + "'s book cover"}/>
       </Card>
   )
 }
