@@ -8,7 +8,7 @@ describe('Searchbar Component', () => {
   beforeEach(() => {
     wrapper = shallow(<Searchbar />)
   })
-
+  
   it('renders the searchbar component without errors', () => {  
     expect(wrapper).toMatchSnapshot()
   })

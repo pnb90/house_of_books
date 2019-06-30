@@ -6,71 +6,83 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
+const BookCover = styled.img`
+  height: 266px;
+  width: 200px;
+  border: 1px solid grey;
+  padding: 5px;    
+`
+
+const Row = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const CoverColumn = styled.div`
+  flex: 25%;
+`
+
+const TitleColumn = styled.div`
+  flex: 75%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 10px;
+  font-size: 32px;
+`
+
+const StyledButton = styled.button`
+  background-color: #aed581;
+  border: none;
+  color: #f1f8e9;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  
+  &:hover{
+    cursor: pointer;
+  } 
+`
+
+const StyledA = styled.a`
+  background-color: #aed581;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover{
+    cursor: pointer;
+  } 
+`
+
 function DialogComponent(props) {
   
   const [open, setOpen] = useState(false)
 
-  function handleClickOpen() {
+  /**
+   * Opens the dialog component
+   * 
+   * Dialog component takes in props of open=true/false. While true, the dialog is open. This function sets the open props to true upon clicking the button.
+   */
+  function handleOpen() {
     setOpen(true)
   }
+
+    /**
+   * Closes the dialog
+   * 
+   * Dialog component takes in props of open=true/false. While false, the dialog is closed. This function sets the open props to false upon either clicking on the background or pressing escape.
+   */
 
   function handleClose() {
     setOpen(false)
   }
 
-  const BookCover = styled.img`
-    height: 266px;
-    width: 200px;
-    border: 1px solid grey;
-    padding: 5px;    
-  `
-
-  const Row = styled.div`
-    display: flex;
-    align-items: center;
-  `
-
-  const CoverColumn = styled.div`
-    flex: 25%;
-  `
-  
-  const TitleColumn = styled.div`
-    flex: 75%;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-left: 10px;
-    font-size: 32px;
-  `
-
-  const StyledButton = styled.button`
-    background-color: #aed581;
-    border: none;
-    color: #f1f8e9;
-    padding: 7px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px;
-    
-    &:hover{
-      cursor: pointer;
-    } 
-  `
-
-  const StyledA = styled.a`
-    background-color: #aed581;
-    padding: 7px;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover{
-      cursor: pointer;
-    } 
-  `
   return(
     <div>
       <StyledButton 
-        onClick = { handleClickOpen }
+        onClick = { handleOpen }
       >
         More Info
       </StyledButton>
@@ -94,8 +106,8 @@ function DialogComponent(props) {
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Description: <br />
-            {props.description}
+            <ul> Description </ul>
+            <ul> {props.description} </ul>
           </DialogContentText>
           <DialogContentText>
             <StyledA href={props.book.infoLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA>

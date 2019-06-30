@@ -5,10 +5,9 @@ import PropTypes from 'prop-types'
 
 const Card = styled.div`
   display: flex;
-  width: 225px; 
-  height: 300px;                
-  margin: 12px;
-  padding: 5px;
+  width: 16%; 
+  height: 40%;                
+  margin: 1.25em;
   position: relative;
 `
 
@@ -23,11 +22,11 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   flex-direction: column;
-  justify-content: center;/
+  justify-content: center;
   overflow: auto;
   opacity: 0;
   border-radius: 5px;
-  padding: 20px;
+  padding: 1em;
   box-sizing: border-box;
 
   &:hover{

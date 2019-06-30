@@ -14,10 +14,26 @@ const Input = styled(InputBase)`
 function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
   
+  /** 
+   * Updates the searchTerm to match the information being typed.
+   * 
+   * @param {event} - HTML event tracking information in the searchbar
+   * 
+   * Calls the setSearchTerm hook to update searchTerm upon any changes in the searchbar.
+  */
   const handleSearchTermsChanges = (event) => { 
     setSearchTerm(event.target.value); 
   }
     
+   /** 
+   * Handles the submit action once entering the search term
+   * 
+   * @param {event} - HTML event tracking information in the searchbar
+   * 
+   * Prevents default behavior of the event, namely reloading the page.
+   * Passes the searchTerm back to the parent component via the props.searchBookCallback function after downcasing it. 
+   * 
+  */
   const handleSubmit = (event) => {
     event.preventDefault()
     props.searchBookCallback( searchTerm.toLowerCase() )
