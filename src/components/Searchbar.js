@@ -13,7 +13,6 @@ const Input = styled(InputBase)`
 `
 function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
-
   
   const handleSearchTermsChanges = (event) => { 
     setSearchTerm(event.target.value); 
