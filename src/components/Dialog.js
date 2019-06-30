@@ -55,7 +55,11 @@ const StyledA = styled.a`
     cursor: pointer;
   } 
 `
-
+/**
+ * Renders a dialog modal for each individual book. 
+ * 
+ * @param {*} props - contains information about individual book from results of GoogleBooks API search. Includes book object, title, authors, bookcover, publisher, and description.
+ */
 function DialogComponent(props) {
   
   const [open, setOpen] = useState(false)
@@ -63,7 +67,7 @@ function DialogComponent(props) {
   /**
    * Opens the dialog component
    * 
-   * Dialog component takes in props of open=true/false. While true, the dialog is open. This function sets the open props to true upon clicking the button.
+   * Material UI Dialog component takes in props of open=boolean. While true, the dialog is open. This function sets the open props to true upon clicking the button.
    */
   function handleOpen() {
     setOpen(true)
@@ -72,7 +76,7 @@ function DialogComponent(props) {
     /**
    * Closes the dialog
    * 
-   * Dialog component takes in props of open=true/false. While false, the dialog is closed. This function sets the open props to false upon either clicking on the background or pressing escape.
+   * Material UI Dialog component takes in props of open=boolean. While false, the dialog is closed. This function sets the open props to false upon either clicking on the background or pressing escape.
    */
 
   function handleClose() {
@@ -99,18 +103,15 @@ function DialogComponent(props) {
               <BookCover src={props.bookCover} alt="bookcover"/>
             </CoverColumn>
             <TitleColumn>
-              <ul> { props.book.title } </ul>
+              <ul> { props.title } </ul>
               <ul> By {props.authors} </ul>
             </TitleColumn>
           </Row>
         </DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            <ul> Description </ul>
+          <DialogContentText component={'div'}>
             <ul> {props.description} </ul>
-          </DialogContentText>
-          <DialogContentText>
-            <StyledA href={props.book.infoLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA>
+            <ul> <StyledA href={props.externalLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA> </ul>
           </DialogContentText>
         </DialogContent>
       </Dialog>
@@ -120,7 +121,6 @@ function DialogComponent(props) {
 
 DialogComponent.propTypes = {
   book: PropTypes.object,
-  extraInfo: PropTypes.object,
   bookCover: PropTypes.string,
   authors: PropTypes.oneOfType([
     PropTypes.string,

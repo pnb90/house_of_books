@@ -21,15 +21,14 @@ function DisplayResults(props) {
 
   if (props.books) {
     displayBooks = props.books.map(book => {
-
       return(
               <Card
                 key = { book.id } 
-                book = { book }
+                externalLink = { book.volumeInfo.infoLink }
                 title = { book.volumeInfo.title }
                 bookCover = { (book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail) || "https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg" }
                 publisher = { book.volumeInfo.publisher || "N/A" }
-                description = { book.volumeInfo.description || "N/A" }
+                description = { book.volumeInfo.description || "No description available." }
                 authors = { book.volumeInfo.authors || "N/A" }
               />      
       )})

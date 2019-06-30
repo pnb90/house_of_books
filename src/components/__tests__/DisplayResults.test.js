@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount, shallow, render } from '../enzyme';
-import DisplayResults from '../components/DisplayResults';
+import { mount, shallow, render } from '../../enzyme';
+import DisplayResults from '../DisplayResults';
 
 describe('Basic test', () => {
   it('basic test', () => {
