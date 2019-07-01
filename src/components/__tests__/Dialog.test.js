@@ -1,15 +1,15 @@
 import React from 'react';
-import { mount, shallow, render } from '../../enzyme';
+import { shallow } from '../../enzyme';
 import Dialog from '../Dialog';
 
-describe('Basic test', () => {
-  it('basic test', () => {
-    expect(2+2).toBe(4)
-  })
-})
+describe('Dialog component', () => {
+  let wrapper
 
-// describe('Renders Dialog', () => {
-//    it('renders without crashing', () => {
-//       shallow(<Dialog />);
-//     });
-// });
+  beforeEach(() => {
+     wrapper = shallow(<Dialog />)
+  })
+
+  it('renders as expected', () => {
+     expect(wrapper).toMatchSnapshot()
+   });
+});

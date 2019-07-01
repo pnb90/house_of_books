@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage component renders as expected 1`] = `
+<styled.div>
+  <styled.div>
+    <LocalLibraryIcon />
+    House of Books
+    <LocalLibraryIcon />
+  </styled.div>
+  <Searchbar
+    searchBookCallback={[Function]}
+  />
+  <DisplayResults />
+</styled.div>
+`;

@@ -1,14 +1,17 @@
 import React from 'react';
-import { mount, shallow, render } from '../../enzyme';
+import { shallow } from '../../enzyme';
 import DisplayResults from '../DisplayResults';
 
-describe('Basic test', () => {
-  it('basic test', () => {
-    expect(2+2).toBe(4)
+
+describe('DisplayResults component', () => {
+  let wrapper
+
+  beforeEach(() => {
+     wrapper = shallow(<DisplayResults />)
   })
-})
-// describe('Renders DisplayResults', () => {
-//    it('renders without crashing', () => {
-//       shallow(<DisplayResults />);
-//     });
-// });
+
+  it('renders as expected', () => {
+     expect(wrapper).toMatchSnapshot()
+   });
+});
+

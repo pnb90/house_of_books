@@ -23,25 +23,17 @@ describe('Searchbar Component', () => {
   
 })
 
-describe('Searchbar Component', () => {
+describe('Searchbar Component with props', () => {
   let wrapper
   
   beforeEach(() => {
-    const searchBookCallback = () => {
-      "I'm a function!"
-    }
     wrapper = mount(<Searchbar 
-      searchBookCallback = { searchBookCallback }
+      searchBookCallback = { jest.fn() }
     />)
   })
 
-  it('accepts props', () => {
-    // console.log(wrapper.debug())
-    console.log(wrapper.find('form'))
-    expect(wrapper.find('form').toBeTruthy())
-    // expect(wrapper.props().aria-label).toBe("book searchbar")
-    // expect(wrapper.props().onChange).toBe({handleSearchTermsChanges})
-    // expect(wrapper.props().placeholder).toBe("Search for books")
+  it('has props', () => {
+    expect(wrapper).toHaveProp('searchBookCallback')
   })
 })
 

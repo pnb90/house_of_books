@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component renders as expected 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.h1>
+       
+       
+    </styled.h1>
+    <styled.ul>
+       By: 
+       
+    </styled.ul>
+    <styled.ul>
+       Publisher: 
+       
+    </styled.ul>
+    <DialogComponent />
+  </styled.div>
+  <styled.img
+    alt="undefined's book cover"
+  />
+</styled.div>
+`;
