@@ -5,7 +5,7 @@ exports[`Dialog component renders as expected 1`] = `
   <styled.button
     onClick={[Function]}
   >
-    More Info
+     More Info 
   </styled.button>
   <WithStyles(ForwardRef(Dialog))
     aria-describedby="alert-dialog-description"
@@ -23,14 +23,14 @@ exports[`Dialog component renders as expected 1`] = `
           />
         </styled.div>
         <styled.div>
-          <ul>
+          <styled.li>
              
-             
-          </ul>
-          <ul>
+              
+          </styled.li>
+          <styled.li>
              By 
              
-          </ul>
+          </styled.li>
         </styled.div>
       </styled.div>
     </WithStyles(ForwardRef(DialogTitle))>
@@ -38,11 +38,11 @@ exports[`Dialog component renders as expected 1`] = `
       <WithStyles(ForwardRef(DialogContentText))
         component="div"
       >
-        <ul>
+        <styled.li>
            
            
-        </ul>
-        <ul>
+        </styled.li>
+        <styled.li>
            
           <styled.a
             rel="noopener noreferrer"
@@ -51,7 +51,7 @@ exports[`Dialog component renders as expected 1`] = `
             Even More Info
           </styled.a>
            
-        </ul>
+        </styled.li>
       </WithStyles(ForwardRef(DialogContentText))>
     </WithStyles(ForwardRef(DialogContent))>
   </WithStyles(ForwardRef(Dialog))>

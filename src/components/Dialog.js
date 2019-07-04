@@ -45,9 +45,14 @@ const StyledButton = styled.button`
   } 
 `
 
+const StyledListItem = styled.li`
+  list-style-type: none;
+  margin: 1rem;
+`
+
 const StyledA = styled.a`
   background-color: #aed581;
-  padding: 7px;
+  padding: 0.5rem;
   text-align: center;
   text-decoration: none;
 
@@ -56,10 +61,13 @@ const StyledA = styled.a`
   } 
 `
 /**
- * Renders a dialog modal for each individual book. 
+ * DialogComponent
+ * @method 
+ * 
+ * @summary Renders a dialog modal for each individual book. 
  * 
  * @param {*} props - contains information about individual book from results of GoogleBooks API search. Includes book object, title, authors, bookcover, publisher, and description.
- */
+ */ 
 function DialogComponent(props) {
   
   const [open, setOpen] = useState(false)
@@ -67,17 +75,12 @@ function DialogComponent(props) {
   /**
    * Opens the dialog component
    * 
-   * Material UI Dialog component takes in props of open=boolean. While true, the dialog is open. This function sets the open props to true upon clicking the button.
+   * Material UI Dialog component takes in props of open=boolean. While true, the dialog is open, and vice versa. handleOpen sets the open props to true upon clicking the button, while handleClose sets the open props to false.
    */
+
   function handleOpen() {
     setOpen(true)
   }
-
-    /**
-   * Closes the dialog
-   * 
-   * Material UI Dialog component takes in props of open=boolean. While false, the dialog is closed. This function sets the open props to false upon either clicking on the background or pressing escape.
-   */
 
   function handleClose() {
     setOpen(false)
@@ -85,11 +88,7 @@ function DialogComponent(props) {
 
   return(
     <div>
-      <StyledButton 
-        onClick = { handleOpen }
-      >
-        More Info
-      </StyledButton>
+      <StyledButton onClick = { handleOpen }> More Info </StyledButton>
 
       <Dialog
         open={open}
@@ -103,17 +102,19 @@ function DialogComponent(props) {
               <BookCover src={props.bookCover} alt="bookcover"/>
             </CoverColumn>
             <TitleColumn>
-              <ul> { props.title } </ul>
-              <ul> By {props.authors} </ul>
+              <StyledListItem> { props.title }  </StyledListItem> 
+              <StyledListItem> By {props.authors} </StyledListItem>
             </TitleColumn>
           </Row>
         </DialogTitle>
+
         <DialogContent>
           <DialogContentText component={'div'}>
-            <ul> {props.description} </ul>
-            <ul> <StyledA href={props.externalLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA> </ul>
+            <StyledListItem> {props.description} </StyledListItem>  
+            <StyledListItem> <StyledA href={props.externalLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA> </StyledListItem>  
           </DialogContentText>
         </DialogContent>
+
       </Dialog>
     </div>
   )

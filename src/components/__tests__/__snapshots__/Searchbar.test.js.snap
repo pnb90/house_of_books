@@ -2,7 +2,9 @@
 
 exports[`Searchbar component matches snapshot 1`] = `
 <DocumentFragment>
-  <form>
+  <form
+    data-testid="form"
+  >
     <label
       class="sc-bwzfXH bGgvvP"
       for="searchInput"

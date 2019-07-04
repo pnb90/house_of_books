@@ -1,14 +1,9 @@
 import React from 'react';
 // import { mount, shallow } from '../../enzyme';
 import Searchbar from '../Searchbar';
-import { render, cleanup, fireEvent, prettyDOM } from '@testing-library/react'
+import { render, fireEvent, prettyDOM } from '@testing-library/react'
 
-
-
-describe('Searchbar component', () => {
-  
-  afterEach(cleanup)
-  
+describe('Searchbar component', () => { 
   it("matches snapshot", () => {
     const { asFragment } = render(<Searchbar />)
 
@@ -19,6 +14,8 @@ describe('Searchbar component', () => {
     const { findByPlaceholderText } = render(<Searchbar />)
 
     expect(findByPlaceholderText("Search for books")).toBeTruthy()
+    // expect(findByPlaceholderText("Search for books").placeholder).toBe("Search for books")
+
   })
 
   it("allows for text input", () => {
@@ -31,19 +28,22 @@ describe('Searchbar component', () => {
     expect(inputWordTarget.value).not.toBe("")
   })
 
-  // Need to figure out how to target the form to ensure that its onSubmit is being triggered by pressing ENTER 
+  // Test for enter key triggering handleSubmit function
   // it("responds when 'enter' is pressed", () => {
-  //   const { getByLabelText, getByRole } = render(<Searchbar />)
-  //   const formContainer = getByRole('form')
+  //   const { getByLabelText, getByTestId } = render(<Searchbar />)
+  //   const { searchBookCallback } = jest.fn()
+  //   const formContainer = getByTestId('form')
+  //   const handleSubmit = jest.fn()
   //   const inputWordTarget = getByLabelText("Book Search:")
-  //   const onSubmit = jest.fn()
 
-  //   console.log(prettyDOM(inputWordTarget))
-
-  //   fireEvent.keyDown(inputWordTarget, { key: 'Enter', code: 13 })
+  //   console.log(formContainer)
+  //   console.log(prettyDOM(formContainer))
+  //   // fireEvent.submit(formContainer)
   //   fireEvent.keyDown(formContainer, { key: 'Enter', code: 13 })
+  //   fireEvent.keyDown(inputWordTarget, { key: 'Enter', code: 13 })
+
     
-  //   expect(onSubmit).toHaveBeenCalled()
+  //   expect(handleSubmit).toHaveBeenCalled()
   // })
 })
 

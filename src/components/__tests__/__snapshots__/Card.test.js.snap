@@ -1,24 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card component renders as expected 1`] = `
-<styled.div>
-  <styled.div>
-    <styled.h1>
-       
-       
-    </styled.h1>
-    <styled.ul>
-       By: 
-       
-    </styled.ul>
-    <styled.ul>
-       Publisher: 
-       
-    </styled.ul>
-    <DialogComponent />
-  </styled.div>
-  <styled.img
-    alt="undefined's book cover"
-  />
-</styled.div>
+exports[`Card component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gzVnrw kTjCBY"
+  >
+    <div
+      class="sc-dnqmqq kvtRn"
+    >
+      <h1
+        class="sc-iwsKbI bquKru"
+      >
+          
+      </h1>
+      <ul
+        class="sc-gZMcBi fUbFnV"
+      >
+         By:  
+      </ul>
+      <ul
+        class="sc-gZMcBi fUbFnV"
+      >
+         Publisher:  
+      </ul>
+      <div>
+        <button
+          class="sc-ifAKCX iFmML"
+        >
+           More Info 
+        </button>
+      </div>
+    </div>
+    <img
+      alt="undefined's book cover"
+      class="sc-htoDjs iLrjRP"
+    />
+  </div>
+</DocumentFragment>
 `;
