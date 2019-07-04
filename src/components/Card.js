@@ -4,12 +4,13 @@ import Dialog from './Dialog'
 import PropTypes from 'prop-types'
 
 const Card = styled.div`
-  width: 225px; 
-  height: 300px;                
-  margin: 12px;
-  padding: 5px;
+  display: flex;
+  width: 16%; 
+  height: 40%;                
+  margin: 1.25em;
   position: relative;
 `
+
 const BookCover = styled.img`
   width: 100%;
   height: 100%;
@@ -18,16 +19,14 @@ const BookCover = styled.img`
 
 const Overlay = styled.div`
   position: absolute;
-  width: 225px;
-  height: 300px;
-  display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   overflow: auto;
-  align-items: center;
   opacity: 0;
   border-radius: 5px;
-  padding: 20px;
+  padding: 1em;
   box-sizing: border-box;
 
   &:hover{
@@ -39,20 +38,34 @@ const Overlay = styled.div`
   }
 `
 
+const OverlayTitle = styled.h1`
+  font-size: 1.66rem;
+`
+
+const OverlayItems = styled.ul`
+  font-size: 1.25rem;
+  padding: 0;
+`
+/**
+ * Renders a single card object that displays as a bookcover with an overlay component on top of the bookcover. 
+ * 
+ * @param {*} props - contains information about individual book from results of GoogleBooks API search. Includes book object, title, authors, bookcover, publisher, and description.
+ */
+
 function CardComponent(props) { 
   return(
       <Card>
         <Overlay>
-          <h3> { props.title } </h3>
-          <ul> By: { props.authors } </ul>
-          <ul> Publisher: { props.publisher } </ul>
+          <OverlayTitle> { props.title } </OverlayTitle>
+          <OverlayItems> By: { props.authors } </OverlayItems>
+          <OverlayItems> Publisher: { props.publisher } </OverlayItems>
           <Dialog 
-            book = { props.book.volumeInfo }
-            extraInfo = { props.book }
+            title = { props.title }
             bookCover = { props.bookCover }
             authors = { props.authors }
             publisher = { props.publisher }
             description = { props.description }
+            externalLink = { props.externalLink }
           />
         </Overlay>
         <BookCover src={ props.bookCover } alt = {props.title + "'s book cover"}/>

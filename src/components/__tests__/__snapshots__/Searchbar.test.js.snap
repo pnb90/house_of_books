@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Searchbar component matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    data-testid="form"
+  >
+    <label
+      class="sc-bwzfXH bGgvvP"
+      for="searchInput"
+    >
+       Book Search: 
+    </label>
+    <div
+      aria-label="book searchbar"
+      class="MuiInputBase-root sc-bdVaJa fcBMVU"
+    >
+      <input
+        class="MuiInputBase-input"
+        id="searchInput"
+        placeholder="Search for books"
+        type="text"
+        value=""
+      />
+    </div>
+  </form>
+</DocumentFragment>
+`;

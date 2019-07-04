@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fjdhpX bDUtko"
+  >
+    <div
+      class="sc-jzJRlG ivLtnB"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"
+        />
+      </svg>
+      House of Books
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root"
+        focusable="false"
+        role="presentation"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.19 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 8c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"
+        />
+      </svg>
+    </div>
+    <form
+      data-testid="form"
+    >
+      <label
+        class="sc-bwzfXH bGgvvP"
+        for="searchInput"
+      >
+         Book Search: 
+      </label>
+      <div
+        aria-label="book searchbar"
+        class="MuiInputBase-root sc-bdVaJa fcBMVU"
+      >
+        <input
+          class="MuiInputBase-input"
+          id="searchInput"
+          placeholder="Search for books"
+          type="text"
+          value=""
+        />
+      </div>
+    </form>
+    <div
+      class="sc-jTzLTM kwYROD"
+    />
+  </div>
+</DocumentFragment>
+`;

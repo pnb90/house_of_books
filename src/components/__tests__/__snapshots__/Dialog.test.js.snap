@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog component renders as expected 1`] = `
+<div>
+  <styled.button
+    onClick={[Function]}
+  >
+     More Info 
+  </styled.button>
+  <WithStyles(ForwardRef(Dialog))
+    aria-describedby="alert-dialog-description"
+    aria-labelledby="alert-dialog-title"
+    onClose={[Function]}
+    open={false}
+  >
+    <WithStyles(ForwardRef(DialogTitle))
+      id="alert-dialog-title"
+    >
+      <styled.div>
+        <styled.div>
+          <styled.img
+            alt="bookcover"
+          />
+        </styled.div>
+        <styled.div>
+          <styled.li>
+             
+              
+          </styled.li>
+          <styled.li>
+             By 
+             
+          </styled.li>
+        </styled.div>
+      </styled.div>
+    </WithStyles(ForwardRef(DialogTitle))>
+    <WithStyles(ForwardRef(DialogContent))>
+      <WithStyles(ForwardRef(DialogContentText))
+        component="div"
+      >
+        <styled.li>
+           
+           
+        </styled.li>
+        <styled.li>
+           
+          <styled.a
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Even More Info
+          </styled.a>
+           
+        </styled.li>
+      </WithStyles(ForwardRef(DialogContentText))>
+    </WithStyles(ForwardRef(DialogContent))>
+  </WithStyles(ForwardRef(Dialog))>
+</div>
+`;
