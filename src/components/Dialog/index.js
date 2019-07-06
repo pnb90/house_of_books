@@ -3,63 +3,9 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import styled from 'styled-components'
+import {BookCover, Row, CoverColumn, TitleColumn, StyledButton, StyledListItem, StyledA} from './style' 
 import PropTypes from 'prop-types'
 
-const BookCover = styled.img`
-  height: 266px;
-  width: 200px;
-  border: 1px solid grey;
-  padding: 5px;    
-`
-
-const Row = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const CoverColumn = styled.div`
-  flex: 25%;
-`
-
-const TitleColumn = styled.div`
-  flex: 75%;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding-left: 10px;
-  font-size: 32px;
-`
-
-const StyledButton = styled.button`
-  background-color: #aed581;
-  border: none;
-  color: #f1f8e9;
-  padding: 7px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px;
-  
-  &:hover{
-    cursor: pointer;
-  } 
-`
-
-const StyledListItem = styled.li`
-  list-style-type: none;
-  margin: 1rem;
-`
-
-const StyledA = styled.a`
-  background-color: #aed581;
-  padding: 0.5rem;
-  text-align: center;
-  text-decoration: none;
-
-  &:hover{
-    cursor: pointer;
-  } 
-`
 /**
  * DialogComponent
  * @method 

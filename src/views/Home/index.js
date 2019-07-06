@@ -1,26 +1,11 @@
 import React, {useState} from 'react'
-import styled from 'styled-components'
-import Searchbar from '../components/Searchbar'
-import DisplayResults from '../components/DisplayResults'
+import Searchbar from '../../components/Searchbar'
+import DisplayResults from '../../components/DisplayResults'
 import LocalLibrary from '@material-ui/icons/LocalLibrary'
 import axios from 'axios'
+import { Container, SiteName } from './style'
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: auto;
-  width: auto;
-`
-
-const SiteName = styled.div`
-  font-size: 46px;
-  margin: 5px;
-`
-
-function Home() {
+export default function Home() {
   
   const [books, setBooks] = useState()
   const [totalItems, setTotalItems] = useState()
@@ -55,5 +40,3 @@ function Home() {
     </Container>
   )
 }
-
-export default Home
