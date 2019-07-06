@@ -2,6 +2,6 @@
 
 exports[`DisplayResults component renders as expected 1`] = `
 <styled.div
-  data-testid="displayContainer ID"
+  data-testid="displayContainer testID"
 />
 `;

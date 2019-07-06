@@ -34,7 +34,7 @@ function Searchbar(props) {
   return(
     <form
       onSubmit = { handleSubmit }
-      data-testid = "searchbar form"
+      data-testid = "searchbar testID"
     >   
       <InputLabel htmlFor = "searchInput"> Book Search: </InputLabel> 
       <Input

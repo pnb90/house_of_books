@@ -36,7 +36,7 @@ exports[`renders without crashing 1`] = `
         </svg>
       </div>
       <form
-        data-testid="searchbar form"
+        data-testid="searchbar testID"
       >
         <label
           class="sc-bwzfXH bGgvvP"
@@ -59,7 +59,7 @@ exports[`renders without crashing 1`] = `
       </form>
       <div
         class="sc-jTzLTM kwYROD"
-        data-testid="displayContainer ID"
+        data-testid="displayContainer testID"
       />
     </div>
   </div>

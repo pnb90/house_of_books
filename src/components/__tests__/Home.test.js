@@ -16,14 +16,14 @@ describe('Homepage component', () => {
    
    it("contains the Searchbar Component", () => {
       const { getByTestId } = render(<Home />)
-      expect(getByTestId('searchbar form')).toBeTruthy()
+      expect(getByTestId('searchbar testID')).toBeTruthy()
    })
    
    it("contains the DisplayResults Component", () => {
       const { getByTestId } = render(<Home />)
-      expect(getByTestId('displayContainer ID')).toBeTruthy() 
+      expect(getByTestId('displayContainer testID')).toBeTruthy() 
    })
-   
+
          // it("receives props properly", () => {
          //    const { } = render(<Home />)
          // })
