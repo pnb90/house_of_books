@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import Searchbar from '../../components/Searchbar'
-import DisplayResults from '../../components/DisplayResults'
+import Searchbar from 'components/Searchbar'
+import DisplayResults from 'components/DisplayResults'
 import LocalLibrary from '@material-ui/icons/LocalLibrary'
 import axios from 'axios'
 import { Container, SiteName } from './style'
@@ -28,7 +28,7 @@ export default function Home() {
         <LocalLibrary />
       </SiteName>
 
-      <Searchbar 
+      <Searchbar
         searchBookCallback = { searchBookCallback }
       />
 
