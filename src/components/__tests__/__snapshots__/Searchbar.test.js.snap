@@ -3,7 +3,7 @@
 exports[`Searchbar component matches snapshot 1`] = `
 <DocumentFragment>
   <form
-    data-testid="form"
+    data-testid="searchbar testID"
   >
     <label
       class="sc-bwzfXH bGgvvP"

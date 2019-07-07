@@ -1,20 +1,7 @@
 import React, {useState} from 'react'
-import styled from 'styled-components'
-import InputBase from '@material-ui/core/InputBase'
 import PropTypes from 'prop-types'
+import { Input, InputLabel } from './style'
 
-const Input = styled(InputBase)`
-  background: white;
-  border-radius: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding: 5px;
-  background: #f1f8e9;
-`
-
-const InputLabel = styled.label`
-  
-`
 function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
   
@@ -47,7 +34,7 @@ function Searchbar(props) {
   return(
     <form
       onSubmit = { handleSubmit }
-      data-testid = "form"
+      data-testid = "searchbar testID"
     >   
       <InputLabel htmlFor = "searchInput"> Book Search: </InputLabel> 
       <Input
