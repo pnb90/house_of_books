@@ -11,12 +11,14 @@ import { Card, BookCover, Overlay, OverlayTitle, OverlayItems } from "./style"
 
 function CardComponent(props) { 
   return(
-    <Card>
+    <Card
+      data-testid = "card testID"
+    >
         <Overlay>
-            <OverlayTitle> { props.title } </OverlayTitle>
-            <OverlayItems> By: { props.authors } </OverlayItems>
-            <OverlayItems> Publisher: { props.publisher } </OverlayItems>
-            <Dialog 
+          <OverlayTitle> { props.title } </OverlayTitle>
+          <OverlayItems> By: { props.authors } </OverlayItems>
+          <OverlayItems> Publisher: { props.publisher } </OverlayItems>
+          <Dialog 
             title = { props.title }
             bookCover = { props.bookCover }
             authors = { props.authors }

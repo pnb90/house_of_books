@@ -1,6 +1,5 @@
-   import React from 'react';
-import { shallow } from '../../enzyme';
-import { render, fireEvent, prettyDOM } from '@testing-library/react'
+import React from 'react';
+import { render, fireEvent, prettyDOM, waitForElement} from '@testing-library/react'
 import Card from '../Card';
 
 // Tests I want to write: Card receives props, card accurately displays props, card passes props to dialog
@@ -12,24 +11,26 @@ describe('Card component', () => {
    })
 
    it("receives props properly", () => {
-      const { } = render(<Card 
-                                       key = "fake data"
-                                       externalLink = "fake data"
-                                       title = "fake data"
-                                       bookCover = "fake data"
-                                       publisher = "fake data"
-                                       description = "fake data"
-                                       authors = "fake data"
-                                    />)
+      const { getByTestId } = render(<Card
+         key = "fake key"
+         externalLink = "fake link"
+         title = "fake title"
+         bookCover = "fake bookcover url"
+         publisher = "fake publisher"
+         description = "fake description"
+         authors = "fake author"
+         />)
+      const card = getByTestId('card testID')
    })
 
-//   let wrapper
-
-//   beforeEach(() => {
-//      wrapper = shallow(<Card />)
-//   })
-
-//   it('renders as expected', () => {
-//      expect(wrapper).toMatchSnapshot()
-//    })
-})
+   it("renders props properly", async () => {
+      const { getByText } = render(<Card
+         title = "fake title"
+         publisher = "fake publisher"
+         authors = "fake author"
+         />)
+      
+      await waitForElement(() => getByText(/fake title/i));
+      await waitForElement(() => getByText(/fake publisher/i));
+      await waitForElement(() => getByText(/fake author/i));
+   })

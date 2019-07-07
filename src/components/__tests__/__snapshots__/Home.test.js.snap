@@ -39,7 +39,7 @@ exports[`Homepage component matches snapshot 1`] = `
         class="sc-bwzfXH bGgvvP"
         for="searchInput"
       >
-         Book Search: 
+        Book Search:
       </label>
       <div
         aria-label="book searchbar"

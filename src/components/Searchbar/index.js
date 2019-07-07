@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Input, InputLabel } from './style'
 
-function Searchbar(props) {
+export default function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
   
   /** 
@@ -36,7 +36,9 @@ function Searchbar(props) {
       onSubmit = { handleSubmit }
       data-testid = "searchbar testID"
     >   
-      <InputLabel htmlFor = "searchInput"> Book Search: </InputLabel> 
+      <InputLabel htmlFor = "searchInput"> 
+        Book Search: 
+      </InputLabel> 
       <Input
         id = "searchInput"
         type = "text"
@@ -51,5 +53,3 @@ function Searchbar(props) {
 Searchbar.propTypes = {
   searchBookCallback: PropTypes.func
 }
-
-export default Searchbar

@@ -4,12 +4,14 @@ exports[`Card component matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="sc-gzVnrw kTjCBY"
+    data-testid="card testID"
   >
     <div
       class="sc-dnqmqq kvtRn"
     >
       <h1
         class="sc-iwsKbI bquKru"
+        data-testid="overlay title testID"
       >
           
       </h1>
