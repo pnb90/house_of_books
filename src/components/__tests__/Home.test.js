@@ -21,6 +21,7 @@ describe('Homepage component', () => {
       expect(getByTestId('displayContainer testID')).toBeTruthy() 
    })
 
+   // What exactly is this testing besides the existence of a mockFunction?
    it("has a functioning axios call", () => {
       mockAxios.get("google.com")      
       expect(mockAxios.get).toHaveBeenCalledTimes(1)      
