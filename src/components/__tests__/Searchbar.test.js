@@ -15,7 +15,7 @@ describe('Searchbar component', () => {
     expect(findByPlaceholderText("Search for books")).toBeTruthy()
   })
 
-  it("allows for text input", () => {
+  it("allows the input to be changed", () => {
     const { getByLabelText } = render(<Searchbar />)
     const inputWordTarget = getByLabelText("Book Search:")
 
@@ -30,14 +30,13 @@ describe('Searchbar component', () => {
   })
 
   it("has a functioning onSubmit by calling searchBookCallback", () => {
-    const searchBookCallback = jest.fn()
+    let searchBookCallback = jest.fn()
 
     const { getByTestId } = render(<Searchbar searchBookCallback = { searchBookCallback }  />)
 
     const formContainer = getByTestId('searchbar testID')
-
     fireEvent.submit(formContainer)
 
-    expect(searchBookCallback) .toHaveBeenCalled() 
+    expect(searchBookCallback).toHaveBeenCalled()
   })
 })

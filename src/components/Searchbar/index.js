@@ -36,7 +36,9 @@ export default function Searchbar(props) {
       onSubmit = { handleSubmit }
       data-testid = "searchbar testID"
     >   
-      <InputLabel htmlFor = "searchInput"> Book Search: </InputLabel> 
+      <InputLabel htmlFor = "searchInput"> 
+        Book Search: 
+      </InputLabel> 
       <Input
         id = "searchInput"
         type = "text"
