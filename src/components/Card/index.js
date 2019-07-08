@@ -27,7 +27,7 @@ function CardComponent(props) {
             externalLink = { props.externalLink }
           />
         </Overlay>
-        <BookCover src={ props.bookCover } alt = {props.title + "'s book cover"}/>
+        <BookCover src={ props.bookCover } alt={props.title + "'s book cover"}/>
     </Card>
   )
 }

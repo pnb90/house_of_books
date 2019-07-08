@@ -56,7 +56,7 @@ function DialogComponent(props) {
           <DialogContentText component={'div'}>
             <StyledListItem> { props.description } </StyledListItem>  
             <StyledListItem> 
-              <StyledA href={ props.externalLink }  target="_blank" rel="noopener noreferrer">
+              <StyledA href={ props.externalLink } target="_blank" rel="noopener noreferrer">
                 Even More Info
               </StyledA> 
             </StyledListItem>  

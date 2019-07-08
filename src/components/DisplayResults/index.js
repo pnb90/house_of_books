@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { DisplayContainer } from './style'
 
 function DisplayResults(props) {
-  var displayBooks = null
+  var displayBooks
 
   if (props.books) {
     displayBooks = props.books.map(book => {
@@ -24,9 +24,7 @@ function DisplayResults(props) {
   }
   
   return(
-    <DisplayContainer
-      data-testid = "displayContainer testID"
-    >
+    <DisplayContainer data-testid = "displayContainer testID">
       { displayBooks }
     </DisplayContainer>
   )

@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DisplayResults component renders as expected 1`] = `
-<styled.div
-  data-testid="displayContainer testID"
-/>
+<DocumentFragment>
+  <div
+    class="sc-gqjmRU FPeAe"
+    data-testid="displayContainer testID"
+  />
+</DocumentFragment>
 `;

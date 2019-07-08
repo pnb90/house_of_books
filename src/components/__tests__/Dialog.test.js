@@ -28,10 +28,11 @@ describe('MaterialDialog component', () => {
    beforeEach(() => {
       const { getByText } = render(<Dialog 
          title = "Test Title"
-         authors = "Author Test"
-         externalLink = "testlink.com"
          bookCover = "https://www.bookcover.com"
+         authors = "Author Test"
+         publisher = "Publisher Test"
          description = "Description of Test Title"
+         externalLink = "https://www.externallink.com"
       />)
       fireEvent.click(getByText('More Info'))
    })
@@ -63,6 +64,7 @@ describe('MaterialDialog component', () => {
       expect(findByText('Test Title')).toBeTruthy()
       expect(findByText('By Author Test')).toBeTruthy()
       expect(findByText('Description of Test Title')).toBeTruthy()
+      expect(findByText('Publisher')).toBeTruthy()
    })
 
    it("accurately sets bookcover's img src and alt based on props", () => {
@@ -76,5 +78,14 @@ describe('MaterialDialog component', () => {
 
       expect(bookCover.alt).toBeTruthy()
       expect(bookCover.alt).toBe("Test Title's book cover")
+   })
+
+   it("accurately sets external link's src based on props", () => {
+      const { getByText } = render(<Dialog />)
+      
+      let googleBooksButton = getByText("Even More Info")
+      expect(googleBooksButton).toBeTruthy()
+      expect(googleBooksButton.href).toBeTruthy()
+      expect(googleBooksButton.href).toBe('https://www.externallink.com/')
    })
 })

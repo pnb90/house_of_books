@@ -1,8 +1,9 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, prettyDOM } from '@testing-library/react'
 import "jest-dom/extend-expect";
 import mockAxios from 'axios'
 import Home from 'views/Home';
+import Searchbar from 'components/Searchbar';
 
 // Tests I want to write: axios call works, receives props from searchbar, containers searchbar and displayresults components, passes information to both accurately. 
 describe('Homepage component', () => {  
@@ -21,10 +22,19 @@ describe('Homepage component', () => {
       expect(getByTestId('displayContainer testID')).toBeTruthy() 
    })
 
-   // What exactly is this testing besides the existence of a mockFunction?
    it("has a functioning axios call", () => {
-      mockAxios.get("google.com")      
-      expect(mockAxios.get).toHaveBeenCalledTimes(1)      
+      
+      let searchBookCallback = jest.fn(() => {
+         Promise.resolve("searchTerm")
+      })
+
+      // const { getByTestId } = render(<Searchbar searchBookCallback = {searchBookCallback} />)
+
+      // const { } = render(<Home />)
+
+       // console.log(prettyDOM(getByTestId('searchbar testID')))
+      // mockAxios.get("google.com")      
+      // expect(mockAxios.get).toHaveBeenCalledTimes(1)      
    })
 
-   });
+});
