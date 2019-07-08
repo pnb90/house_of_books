@@ -26,7 +26,7 @@ describe('Dialog component', () => {
 
 describe('MaterialDialog component', () => {
    beforeEach(() => {
-      const { getByText, getByTestId } = render(<Dialog 
+      const { getByText } = render(<Dialog 
          title = "Test Title"
          authors = "Author Test"
          externalLink = "testlink.com"
@@ -34,6 +34,27 @@ describe('MaterialDialog component', () => {
          description = "Description of Test Title"
       />)
       fireEvent.click(getByText('More Info'))
+   })
+
+   it('renders as expected, now with MaterialDialog present', () => {    
+      const { asFragment } = render(<Dialog />)
+      expect(asFragment()).toMatchSnapshot()
+    })
+
+    it('MaterialDialog closes when escape key is pressed', () => {
+       const { queryByTestId, getAllByTestId } = render(<Dialog />)
+
+       let dialogComponent = getAllByTestId('dialog testID')[0]
+       fireEvent.keyPress(dialogComponent, { key: 'Escape', code: 27 })
+       expect(queryByTestId('material testID')).toBeNull()
+    })
+
+    it('MaterialDialog closes when you click outside of materialDialog', () => {
+      const { queryByTestId, getAllByTestId } = render(<Dialog />)
+
+      let dialogComponent = getAllByTestId('dialog testID')[0]
+      fireEvent.click(dialogComponent)
+      expect(queryByTestId('material testID')).toBeNull()
    })
 
    it("opens and renders visible props within MaterialDialog accurately", () => {
@@ -44,10 +65,10 @@ describe('MaterialDialog component', () => {
       expect(findByText('Description of Test Title')).toBeTruthy()
    })
 
-   it("accurately sets bookcover's img src based on props", () => {
+   it("accurately sets bookcover's img src and alt based on props", () => {
       const { getByRole } = render(<Dialog />)
       
-      const bookCover = getByRole('img')
+      let bookCover = getByRole('img')
       expect(bookCover).toBeTruthy()
 
       expect(bookCover.src).toBeTruthy()

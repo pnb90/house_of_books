@@ -13,3 +13,17 @@ exports[`Dialog component renders as expected 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`MaterialDialog component renders as expected, now with MaterialDialog present 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="dialog testID"
+  >
+    <button
+      class="sc-ifAKCX iFmML"
+    >
+       More Info 
+    </button>
+  </div>
+</DocumentFragment>
+`;

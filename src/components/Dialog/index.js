@@ -30,9 +30,7 @@ function DialogComponent(props) {
   }
 
   return(
-    <div
-      data-testid = "dialog testID"
-    >
+    <div data-testid = "dialog testID" >
       <StyledButton onClick = { handleOpen }> More Info </StyledButton>
 
       <Dialog
@@ -64,7 +62,6 @@ function DialogComponent(props) {
             </StyledListItem>  
           </DialogContentText>
         </DialogContent>
-
       </Dialog>
     </div>
   )
