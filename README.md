@@ -57,7 +57,7 @@ Most React testing occurs through the combination of Jest and Enzyme, however, I
 
 > "The more your tests resemble the way your software is used, the more confidence they can give you."
 
-For example, instead of testing whether the internal state was named appropriately or if there was a presence of a <div>, which would be more in line with Enzyme, React-Testing-Library tests that the updated state displays as expected for the user or whether the user can enter text into an <input>, etc.
+For example, instead of testing whether the internal state was named appropriately or if there was a presence of a div tag, which would be more in line with Enzyme, React-Testing-Library tests that the updated state displays as expected for the user or whether the user can enter text into an input field, etc.
 
 Typechecking was also included via the use of PropTypes. This ensures that props are validated and match the PropType given. 
 
