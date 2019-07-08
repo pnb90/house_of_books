@@ -18,14 +18,14 @@ function CardComponent(props) {
           <OverlayTitle> { props.title } </OverlayTitle>
           <OverlayItems> By: { props.authors } </OverlayItems>
           <OverlayItems> Publisher: { props.publisher } </OverlayItems>
-          <Dialog 
+          <Dialog
             title = { props.title }
             bookCover = { props.bookCover }
             authors = { props.authors }
             publisher = { props.publisher }
             description = { props.description }
             externalLink = { props.externalLink }
-            />
+          />
         </Overlay>
         <BookCover src={ props.bookCover } alt = {props.title + "'s book cover"}/>
     </Card>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Dialog, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core'
-import {BookCover, Row, CoverColumn, TitleColumn, StyledButton, StyledListItem, StyledA} from './style' 
+import { BookCover, Row, CoverColumn, TitleColumn, StyledButton, StyledListItem, StyledA } from './style' 
 import PropTypes from 'prop-types'
 
 /**
@@ -30,10 +30,13 @@ function DialogComponent(props) {
   }
 
   return(
-    <div>
+    <div
+      data-testid = "dialog testID"
+    >
       <StyledButton onClick = { handleOpen }> More Info </StyledButton>
 
       <Dialog
+        data-testid = "materialDialog testID"
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
@@ -42,19 +45,23 @@ function DialogComponent(props) {
         <DialogTitle id="alert-dialog-title">
           <Row>
             <CoverColumn>
-              <BookCover src={props.bookCover} alt="bookcover"/>
+              <BookCover src={ props.bookCover } alt={ props.title + "'s book cover"} />
             </CoverColumn>
             <TitleColumn>
               <StyledListItem> { props.title }  </StyledListItem> 
-              <StyledListItem> By {props.authors} </StyledListItem>
+              <StyledListItem> By { props.authors } </StyledListItem>
             </TitleColumn>
           </Row>
         </DialogTitle>
 
         <DialogContent>
           <DialogContentText component={'div'}>
-            <StyledListItem> {props.description} </StyledListItem>  
-            <StyledListItem> <StyledA href={props.externalLink}  target="_blank" rel="noopener noreferrer">Even More Info</StyledA> </StyledListItem>  
+            <StyledListItem> { props.description } </StyledListItem>  
+            <StyledListItem> 
+              <StyledA href={ props.externalLink }  target="_blank" rel="noopener noreferrer">
+                Even More Info
+              </StyledA> 
+            </StyledListItem>  
           </DialogContentText>
         </DialogContent>
 

@@ -57,7 +57,9 @@ Most React testing occurs through the combination of Jest and Enzyme, however, I
 
 > "The more your tests resemble the way your software is used, the more confidence they can give you."
 
-For example, instead of testing whether the internal state was updated appropriately, which would be more in line with Enzyme, React-Testing-Library tests that the newly updated state displays as expected for the user or whether the user can enter text, etc. React-Testing-Library also encourages accessibility. 
+For example, instead of testing whether the internal state was named appropriately or if there was a presence of a <div>, which would be more in line with Enzyme, React-Testing-Library tests that the updated state displays as expected for the user or whether the user can enter text into an <input>, etc.
+
+Typechecking was also included via the use of PropTypes. This ensures that props are validated and match the PropType given. 
 
 ## Goals
   - Accomplish all tasks given
@@ -96,7 +98,7 @@ I was able to attend a talk about an 8th Light employee regarding accessibility,
 
 ## Built With
 
-* [React ](https://reactjs.org/) - Frontend Framework
+* [React](https://reactjs.org/) - Frontend Framework
 * [Material UI](https://material-ui.com/) - React Framework based on Material Design
 * [Jest](https://jestjs.io/) - Javascript Testing Framework
 * [React-Testing-Library](https://testing-library.com/) - Testing library used for React components
