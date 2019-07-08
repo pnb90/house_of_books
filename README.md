@@ -47,13 +47,19 @@ Additionally, if there are no provided authors or publishers, "N/A" will replace
 
 
 ## Testing
-Tests were created with Jest and Enzyme and can be run using
+Tests were created with Jest and React-Testing-Library and can be executed by running in Terminal:
 
 ```
 npm test
 ```
 
-That being said, testing is currently incomplete. See more information in the Challenges section.
+Most React testing occurs through the combination of Jest and Enzyme, however, I found React-Testing-Library to be more practical and more in line with my beliefs in testing. Rather than testing implementation details, React-Testing-Library is guided by the following principle: 
+
+> "The more your tests resemble the way your software is used, the more confidence they can give you."
+
+For example, instead of testing whether the internal state was named appropriately or if there was a presence of a <div>, which would be more in line with Enzyme, React-Testing-Library tests that the updated state displays as expected for the user or whether the user can enter text into an <input>, etc.
+
+Typechecking was also included via the use of PropTypes. This ensures that props are validated and match the PropType given. 
 
 ## Goals
   - Accomplish all tasks given
@@ -77,7 +83,7 @@ Design, styling, and animations are taken for granted. It is easy to recognize w
 
 Testing was near the forefront of my mind when planning the project as I knew that 8th Light employs TDD. However, as a newer user of React, my goal was to first and foremost complete the project. Any excess time leftover would then be dedicated to testing, which would be a large undertaking in itself.
 
-While it would have been ideal to implement testing from the beginning to follow TDD standards, but given the project and level of experience, I did not want to submit an incomplete project. An attempt was made. 
+While it would have been ideal to implement testing from the beginning to follow TDD standards, but given the project and level of experience, I did not want to submit an incomplete project.
 
 ## Icebox
   - Testing
@@ -86,20 +92,18 @@ While it would have been ideal to implement testing from the beginning to follow
 
 If given more time, I would like to learn much, much more about implementing testing into House of Books and TDD best practices in general.
 
-Currently, the animation that displays the book's title, authors, and publisher, grows and then shrinks. Oftentimes, the wordwrap will also change during this grow and shrink process, which can be not aesthetically pleasing.
+Currently, the animation that displays the book's title, authors, and publisher, grows and then shrinks. Oftentimes, the wordwrap will also change during this grow and shrink process, which can be not the most aesthetically pleasing.
 
 I was able to attend a talk about an 8th Light employee regarding accessibility, which piqued my interest about accessibility for all users. I have not had the opportunity to ensure that my app is accessible.
 
 ## Built With
 
-* [React ](https://reactjs.org/) - Frontend Framework
+* [React](https://reactjs.org/) - Frontend Framework
 * [Material UI](https://material-ui.com/) - React Framework based on Material Design
-* [Enzyme](https://github.com/airbnb/enzyme) - Javascript testing utilities
-* [Jest](https://jestjs.io/) - testing framework
-* [Axios](https://github.com/axios/axios) - used to make the Google Books API call
-* [Styled-Components](https://www.styled-components.com/) - CSS styling for the entire app.
 * [Jest](https://jestjs.io/) - Javascript Testing Framework
-* [Enzyme](https://airbnb.io/enzyme/) - JavaScript Testing utility for React
+* [React-Testing-Library](https://testing-library.com/) - Testing library used for React components
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js used to make the Google Books API call
+* [Styled-Components](https://www.styled-components.com/) - CSS styling for the entire app.
 
 ## Authors
 
@@ -107,4 +111,4 @@ I was able to attend a talk about an 8th Light employee regarding accessibility,
 
 ## Acknowledgments
 
-Thank you to all the insanely helpful online resources I was able to use! 
+Thank you to all the insanely helpful online resources I was able to use, including but not limited to: HackerNoon, FreeCodeCamp, V School, Leigh Halliday, Kent C. Dobbs, Elizabeth Funk, CSS-Tricks

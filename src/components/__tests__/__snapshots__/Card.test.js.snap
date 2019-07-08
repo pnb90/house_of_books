@@ -11,7 +11,6 @@ exports[`Card component matches snapshot 1`] = `
     >
       <h1
         class="sc-iwsKbI bquKru"
-        data-testid="overlay title testID"
       >
           
       </h1>
@@ -25,7 +24,9 @@ exports[`Card component matches snapshot 1`] = `
       >
          Publisher:  
       </ul>
-      <div>
+      <div
+        data-testid="dialog testID"
+      >
         <button
           class="sc-ifAKCX iFmML"
         >
