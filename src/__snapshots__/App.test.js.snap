@@ -3,13 +3,13 @@
 exports[`renders without crashing 1`] = `
 <div>
   <div
-    class="sc-cSHVUG fiViev"
+    class="sc-jzJRlG inbmUI"
   >
     <div
-      class="sc-fjdhpX bDUtko"
+      class="sc-jTzLTM fgZhHy"
     >
       <div
-        class="sc-jzJRlG ivLtnB"
+        class="sc-fjdhpX SbDhq"
       >
         <svg
           aria-hidden="true"
@@ -40,7 +40,7 @@ exports[`renders without crashing 1`] = `
       >
         <input
           aria-label="book searchbar"
-          class="sc-bdVaJa fcBMVU"
+          class="sc-bdVaJa jzOBlH"
           data-testid="input testID"
           id="searchInput"
           placeholder="Search for books"
@@ -48,7 +48,7 @@ exports[`renders without crashing 1`] = `
         />
       </form>
       <div
-        class="sc-jTzLTM kwYROD"
+        class="sc-VigVT gXmDUX"
         data-testid="displayContainer testID"
       />
     </div>

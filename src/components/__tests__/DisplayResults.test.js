@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, prettyDOM } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import DisplayResults from '../DisplayResults'
 import mockAxios from 'axios'
 
@@ -210,29 +210,27 @@ describe('DisplayResults component', () => {
             expect(getByRole('img').src).toBe("https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg")
          })
       })
-
-      describe("it only displays active cards", () => {
-         it("prior search results are no longer visible after a new search is conducted", () => {
+   })
+   describe("displayResults only shows active cards", () => {
+      it("prior search results are no longer visible after a new search is conducted", () => {
          let books = (mockAxios.get("The Sympathizer")).items
          const { getByText, queryByText, getAllByTestId, rerender } = render(<DisplayResults books = {books}/>)
+         expect(getAllByTestId("displayContainer testID").length).toBe(1)
          expect(queryByText("Gone Girl")).not.toBeTruthy()
          expect(queryByText("Gone Girl")).toBeFalsy()
          expect(getByText("The Sympathizer")).not.toBeFalsy()
          expect(getByText("The Sympathizer")).toBeTruthy()
          expect(getAllByTestId("card testID").length).toBe(3)
-
-         // books = (mockAxios.get("Gone Girl")).items
-         // rerender(<DisplayResults books = {books}/>)
-
-         // console.log(render(<DisplayResults books = {books}/>))
-         // expect(getByText("Gone Girl")).not.toBeFalsy()
-         // expect(getByText("Gone Girl")).toBeTruthy()
-         // expect(queryByText("The Sympathizer")).not.toBeTruthy()
-         // expect(queryByText("The Sympathizer")).toBeFalsy()
-         // expect(getByTestId("card testID")).toBeTruthy()
-         // expect(getAllByTestId("card testID").length).toBe(3)
-      })
-      })
+ 
+         books = (mockAxios.get("Gone Girl")).items
+         rerender(<DisplayResults books = {books}/>)
+         
+         expect(getAllByTestId("displayContainer testID").length).toBe(1)
+         expect(getByText("Gone Girl")).not.toBeFalsy()
+         expect(getByText("Gone Girl")).toBeTruthy()
+         expect(queryByText("The Sympathizer")).not.toBeTruthy()
+         expect(queryByText("The Sympathizer")).toBeFalsy()
+         expect(getAllByTestId("card testID").length).toBe(3)
+    })})   
    })
-      
-   })
+

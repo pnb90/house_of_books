@@ -9,7 +9,7 @@ Once cloned by running
 git clone https://github.com/pnb90/house_of_books.git
 ```
 
-cd into "house_of_books" and run 
+cd into "house\_of\_books" and run 
 
 ```
 npm install
@@ -53,11 +53,11 @@ Tests were created with Jest and React-Testing-Library and can be executed by ru
 npm test
 ```
 
-Most React testing occurs through the combination of Jest and Enzyme, however, I found React-Testing-Library to be more practical and more in line with my beliefs in testing. Rather than testing implementation details, React-Testing-Library is guided by the following principle: 
+Most React testing occurs through the combination of Jest and Enzyme, however, I found React-Testing-Library to be more practical and more in line with my beliefs towards testing. Rather than testing implementation details, React-Testing-Library is guided by the following principle: 
 
 > "The more your tests resemble the way your software is used, the more confidence they can give you."
 
-For example, instead of testing whether the internal state was named appropriately or if there was a presence of a div tag, which would be more in line with Enzyme, React-Testing-Library tests that the updated state displays as expected for the user or whether the user can enter text into an input field, etc.
+For example, instead of testing whether the internal state was named appropriately or if there was a presence of a div tag, which would be more in line with Enzyme, React-Testing-Library tests that the updated state displays as expected for the user or whether the user can enter text into an input field, etc. In this way, React-Testing-Library represents to me a more practical library as it focuses more on ensuring that the user receives the intended experience.
 
 Typechecking was also included via the use of PropTypes. This ensures that props are validated and match the PropType given. 
 
@@ -88,6 +88,8 @@ While it would have been ideal to implement testing from the beginning to follow
 ## Icebox
   - Testing
   - Smoother and better animations
+  - Transition of CSS from px to em/rem
+  - Updating CSS to be accessible on several different media sizes (phone, tablet, etc.)
   - Vetted for accessibility
 
 If given more time, I would like to learn much, much more about implementing testing into House of Books and TDD best practices in general.
@@ -111,4 +113,4 @@ I was able to attend a talk about an 8th Light employee regarding accessibility,
 
 ## Acknowledgments
 
-Thank you to all the insanely helpful online resources I was able to use, including but not limited to: HackerNoon, FreeCodeCamp, V School, Leigh Halliday, Kent C. Dobbs, Elizabeth Funk, CSS-Tricks
+Thank you to all the insanely helpful online resources I was able to use, including but not limited to: HackerNoon, FreeCodeCamp, V School, Leigh Halliday, Kent C. Dobbs, Ola from 8th Light who showed me React-Testing-Library, Elizabeth Funk, CSS-Tricks, and endless YouTube Tutorials.face

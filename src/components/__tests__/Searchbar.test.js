@@ -1,6 +1,6 @@
 import React from 'react';
 import Searchbar from '../Searchbar';
-import { render, fireEvent, prettyDOM } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 
 describe('Searchbar component', () => { 
   it("matches snapshot", () => {
@@ -16,15 +16,9 @@ describe('Searchbar component', () => {
   })
 
   it("allows the input to be changed", () => {
-    const { getByTestId, getByLabelText } = render(<Searchbar />)
-    // const inputWordTarget = getByLabelText("Book Search:")
+    const { getByTestId } = render(<Searchbar />)
     const inputWordTarget = getByTestId("input testID")
-
-    // console.log(prettyDOM(inputWordTarget))
-    // console.log("i'm get by test id")
-    // console.log(prettyDOM(inputWordTarg))
        
-  
     expect(inputWordTarget.value).toBeFalsy()
     expect(inputWordTarget.value).toBe("")
 
