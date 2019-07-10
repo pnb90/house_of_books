@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Card, BookCover, Overlay, OverlayTitle, OverlayItems } from "./style"
 
 /**
- * Renders a single card object that displays as a bookcover with an overlay component on top of the bookcover. 
+ * @summary Renders a single card object that displays as a bookcover with an overlay component on top of the bookcover. 
  * 
  * @param {*} props - contains information about individual book from results of GoogleBooks API search. Includes book object, title, authors, bookcover, publisher, and description.
  */

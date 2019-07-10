@@ -4,9 +4,6 @@ import { BookCover, Row, CoverColumn, TitleColumn, StyledButton, StyledListItem,
 import PropTypes from 'prop-types'
 
 /**
- * DialogComponent
- * @method 
- * 
  * @summary Renders a dialog modal for each individual book. 
  * 
  * @param {*} props - contains information about individual book from results of GoogleBooks API search. Includes book object, title, authors, bookcover, publisher, and description.
@@ -16,7 +13,7 @@ function DialogComponent(props) {
   const [open, setOpen] = useState(false)
 
   /**
-   * Opens the dialog component
+   * @summary Opens the dialog component
    * 
    * Material UI Dialog component takes in props of open=boolean. While true, the dialog is open, and vice versa. handleOpen sets the open props to true upon clicking the button, while handleClose sets the open props to false.
    */
