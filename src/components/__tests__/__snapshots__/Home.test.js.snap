@@ -3,10 +3,10 @@
 exports[`Homepage component matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-fjdhpX bDUtko"
+    class="sc-jTzLTM fgZhHy"
   >
     <div
-      class="sc-jzJRlG ivLtnB"
+      class="sc-fjdhpX SbDhq"
     >
       <svg
         aria-hidden="true"
@@ -37,7 +37,7 @@ exports[`Homepage component matches snapshot 1`] = `
     >
       <input
         aria-label="book searchbar"
-        class="sc-bdVaJa fcBMVU"
+        class="sc-bdVaJa jzOBlH"
         data-testid="input testID"
         id="searchInput"
         placeholder="Search for books"
@@ -45,7 +45,7 @@ exports[`Homepage component matches snapshot 1`] = `
       />
     </form>
     <div
-      class="sc-jTzLTM kwYROD"
+      class="sc-VigVT gXmDUX"
       data-testid="displayContainer testID"
     />
   </div>

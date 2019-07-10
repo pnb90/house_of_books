@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, prettyDOM } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import "jest-dom/extend-expect";
 import mockAxios from 'axios'
 import Home from 'views/Home';
@@ -47,25 +47,5 @@ describe('Homepage component', () => {
          const { getAllByTestId } = render(<Home />)
          expect(getAllByTestId("card testID").length).toBe(3)
       }) 
-
-      it("prior search results are no longer visible after a new search is conducted", () => {
-         const { getByText, queryByText, getAllByTestId, rerender } = render(<Home />)
-         expect(queryByText("Gone Girl")).not.toBeTruthy()
-         expect(queryByText("Gone Girl")).toBeFalsy()
-         expect(getByText("The Sympathizer")).not.toBeFalsy()
-         expect(getByText("The Sympathizer")).toBeTruthy()
-         expect(getAllByTestId("card testID").length).toBe(3)
- 
-         // let books = (mockAxios.get("Gone Girl")).items
-         // render(<DisplayResults books = {books}/>)
-
-         // console.log(render(<DisplayResults books = {books}/>))
-         // expect(getByText("Gone Girl")).not.toBeFalsy()
-         // expect(getByText("Gone Girl")).toBeTruthy()
-         // expect(queryByText("The Sympathizer")).not.toBeTruthy()
-         // expect(queryByText("The Sympathizer")).toBeFalsy()
-         // expect(getByTestId("card testID")).toBeTruthy()
-         // expect(getAllByTestId("card testID").length).toBe(3)
-      })
    }) 
 })
