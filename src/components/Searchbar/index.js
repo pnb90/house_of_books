@@ -2,11 +2,18 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Input } from './style'
 
+/**
+ * @summary Renders a searchbar for users to input their searchterms
+ * 
+ * @param {*} props - contains the searchBookCallback function which will facilitate passing the searchTerm from searchBar (child component)
+ to the Home view (parent component) 
+ */ 
+
 export default function Searchbar(props) {
   const [searchTerm, setSearchTerm] = useState("")
   
   /** 
-   * Updates the searchTerm to match the information being typed.
+   * @summary Updates the searchTerm to match the information being typed.
    * 
    * @param {event} - HTML event tracking information in the searchbar
    * 
@@ -18,14 +25,14 @@ export default function Searchbar(props) {
   }
     
    /** 
-   * Handles the submit action once entering the search term
+   * @summary Handles the submit action once entering the search term
    * 
    * @param {event} - HTML event tracking information in the searchbar
    * 
    * Prevents default behavior of the event, namely reloading the page.
    * Passes the searchTerm back to the parent component via the props.searchBookCallback function after downcasing it. 
-   * 
   */
+
   const handleSubmit = (event) => {
     event.preventDefault()
     props.searchBookCallback( searchTerm.toLowerCase() )

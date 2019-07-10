@@ -3,11 +3,16 @@ import Card from '../Card'
 import PropTypes from 'prop-types'
 import { DisplayContainer } from './style'
 
+/**
+ * @summary Renders a container that iterates through the GoogleBooks search returns.
+ * 
+ * @param {*} props - contains books and totalItems. Books are the resulting collection of books from the GoogleBooks call, and totalItems is a number representing how many search results were present. 
+ */ 
+
 function DisplayResults(props) {
   var displayBooks
 
   if (props.books) {
-    
     displayBooks = props.books.map(book => {
       return(
               <Card
