@@ -35,24 +35,14 @@ exports[`Homepage component matches snapshot 1`] = `
     <form
       data-testid="searchbar testID"
     >
-      <label
-        class="sc-bwzfXH bGgvvP"
-        for="searchInput"
-      >
-        Book Search:
-      </label>
-      <div
+      <input
         aria-label="book searchbar"
-        class="MuiInputBase-root sc-bdVaJa fcBMVU"
-      >
-        <input
-          class="MuiInputBase-input"
-          id="searchInput"
-          placeholder="Search for books"
-          type="text"
-          value=""
-        />
-      </div>
+        class="sc-bdVaJa fcBMVU"
+        data-testid="input testID"
+        id="searchInput"
+        placeholder="Search for books"
+        type="text"
+      />
     </form>
     <div
       class="sc-jTzLTM kwYROD"

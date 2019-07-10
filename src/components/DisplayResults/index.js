@@ -7,6 +7,7 @@ function DisplayResults(props) {
   var displayBooks
 
   if (props.books) {
+    
     displayBooks = props.books.map(book => {
       return(
               <Card

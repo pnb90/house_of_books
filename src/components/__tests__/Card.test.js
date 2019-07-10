@@ -41,7 +41,7 @@ describe('Card component', () => {
             />)
    
          let bookCoverImg = getByAltText("TestBook's book cover")
-       
+         
          expect(bookCoverImg).toBeTruthy()      
          expect(bookCoverImg.alt).toBeTruthy()
          expect(bookCoverImg.alt).toBe("TestBook's book cover")

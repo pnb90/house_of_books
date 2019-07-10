@@ -1,9 +1,8 @@
 import React from 'react';
-import { render, prettyDOM } from '@testing-library/react';
-import DisplayResults from '../DisplayResults';
-import { fireEvent } from '@testing-library/react/dist';
+import { render, prettyDOM } from '@testing-library/react'
+import DisplayResults from '../DisplayResults'
+import mockAxios from 'axios'
 
-// Tests I want to write: receives props, passes props accurately to Card, tests for edge case where there are no results
 describe('DisplayResults component', () => {
   it('renders as expected', () => {
      const { asFragment } = render(<DisplayResults />)
@@ -210,6 +209,29 @@ describe('DisplayResults component', () => {
             />)
             expect(getByRole('img').src).toBe("https://images-na.ssl-images-amazon.com/images/I/91GQ%2BOWqgHL._SX425_.jpg")
          })
+      })
+
+      describe("it only displays active cards", () => {
+         it("prior search results are no longer visible after a new search is conducted", () => {
+         let books = (mockAxios.get("The Sympathizer")).items
+         const { getByText, queryByText, getAllByTestId, rerender } = render(<DisplayResults books = {books}/>)
+         expect(queryByText("Gone Girl")).not.toBeTruthy()
+         expect(queryByText("Gone Girl")).toBeFalsy()
+         expect(getByText("The Sympathizer")).not.toBeFalsy()
+         expect(getByText("The Sympathizer")).toBeTruthy()
+         expect(getAllByTestId("card testID").length).toBe(3)
+
+         // books = (mockAxios.get("Gone Girl")).items
+         // rerender(<DisplayResults books = {books}/>)
+
+         // console.log(render(<DisplayResults books = {books}/>))
+         // expect(getByText("Gone Girl")).not.toBeFalsy()
+         // expect(getByText("Gone Girl")).toBeTruthy()
+         // expect(queryByText("The Sympathizer")).not.toBeTruthy()
+         // expect(queryByText("The Sympathizer")).toBeFalsy()
+         // expect(getByTestId("card testID")).toBeTruthy()
+         // expect(getAllByTestId("card testID").length).toBe(3)
+      })
       })
    })
       

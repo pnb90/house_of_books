@@ -1,8 +1,7 @@
 import React from 'react';
-import { render, prettyDOM, waitForElement, fireEvent} from '@testing-library/react'
+import { render, fireEvent} from '@testing-library/react'
 import Dialog from '../Dialog';
 
-// Tests I want to write: Dialog receives props, Dialog accurately displays props, simulate onClick on button, onClose is triggered, Even more info opens a new tab?, 
 describe('Dialog component', () => {
   it('renders as expected', () => {    
      const { asFragment } = render(<Dialog />)

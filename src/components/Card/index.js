@@ -34,7 +34,6 @@ function CardComponent(props) {
 
 Card.propTypes = {
   key: PropTypes.string,
-  book: PropTypes.object,
   title: PropTypes.string,
   bookCover: PropTypes.string,
   publisher: PropTypes.string,
