@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, prettyDOM, waitForElement} from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Card from '../Card';
-
-// Tests I want to write: Card receives props, card accurately displays props, card passes props to dialog
 
 describe('Card component', () => {  
    it("matches snapshot", () => {
@@ -12,24 +10,42 @@ describe('Card component', () => {
 
    it("renders visible props properly", () => {
       const { getByText } = render(<Card
-         title = "test title"
-         publisher = "test publisher"
-         authors = "test author"
+         title = "Test Title"
+         publisher = "Test Publisher"
+         authors = "Test Author"
          />)
       
-      waitForElement(() => getByText(/test title/i))
-      waitForElement(() => getByText(/test publisher/i))
-      waitForElement(() => getByText(/test author/i))
+      expect(getByText("Test Title")).toBeTruthy()
+      expect(getByText("Publisher: Test Publisher")).toBeTruthy()
+      expect(getByText("By: Test Author")).toBeTruthy()
    })
 
-   it("passes and renders alt text accurately", () => {
-      const { getByAltText } = render(<Card
-         title = "TestBook"
-         />)
-
-      const altText = getByAltText("TestBook's book cover")
-      
-      expect(altText).toBeTruthy()
-      expect(altText.alt).toBe("TestBook's book cover")
+   describe('BookCover rendering', () => {
+      it("passes and renders src url accurately", () => {
+         const { getByAltText } = render(<Card
+            bookCover = "http://bookcover.com"
+            title = "TestBook"
+            />)
+   
+         let bookCoverImg = getByAltText("TestBook's book cover")
+         
+         expect(bookCoverImg).toBeTruthy()
+         expect(bookCoverImg.src).toBeTruthy()
+         expect(bookCoverImg.src).toBe("http://bookcover.com/")
+      })
+   
+      it("passes and renders alt text accurately", () => {
+         const { getByAltText } = render(<Card
+            bookCover = "http://bookcover.com"
+            title = "TestBook"
+            />)
+   
+         let bookCoverImg = getByAltText("TestBook's book cover")
+         
+         expect(bookCoverImg).toBeTruthy()      
+         expect(bookCoverImg.alt).toBeTruthy()
+         expect(bookCoverImg.alt).toBe("TestBook's book cover")
+      })
    })
 })
+

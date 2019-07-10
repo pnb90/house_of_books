@@ -27,14 +27,13 @@ function CardComponent(props) {
             externalLink = { props.externalLink }
           />
         </Overlay>
-        <BookCover src={ props.bookCover } alt = {props.title + "'s book cover"}/>
+        <BookCover src={ props.bookCover } alt={props.title + "'s book cover"}/>
     </Card>
   )
 }
 
 Card.propTypes = {
   key: PropTypes.string,
-  book: PropTypes.object,
   title: PropTypes.string,
   bookCover: PropTypes.string,
   publisher: PropTypes.string,

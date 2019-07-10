@@ -30,9 +30,7 @@ function DialogComponent(props) {
   }
 
   return(
-    <div
-      data-testid = "dialog testID"
-    >
+    <div data-testid = "dialog testID" >
       <StyledButton onClick = { handleOpen }> More Info </StyledButton>
 
       <Dialog
@@ -58,13 +56,12 @@ function DialogComponent(props) {
           <DialogContentText component={'div'}>
             <StyledListItem> { props.description } </StyledListItem>  
             <StyledListItem> 
-              <StyledA href={ props.externalLink }  target="_blank" rel="noopener noreferrer">
+              <StyledA href={ props.externalLink } target="_blank" rel="noopener noreferrer">
                 Even More Info
               </StyledA> 
             </StyledListItem>  
           </DialogContentText>
         </DialogContent>
-
       </Dialog>
     </div>
   )
